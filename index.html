@@ -1,23 +1,20 @@
-<section class="hero">
-  <div class="hero-text">
-    <h1>Clarity‑Driven Coaching for High‑Achieving Professionals</h1>
-    <p>Move from overwhelm to alignment with structured coaching, BA frameworks, and a repeatable system for confident decision‑making.</p>
-    <a href="#programs" class="cta-button">Explore Coaching Programs</a>
-  </div>
-
-  <img src="Images/github/Index.jpeg" class="hero-photo" alt="Catrina Wheeler Portrait"><img src="images/cat-headshot.jpg" alt="Catrina Wheeler">
-</section><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wheeler Fortune BA Coaching Hub</title>
-<img src="images/cat-headshot.jpg" alt="Catrina Wheeler">
-  <!-- Icons -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     :root {
       --brand: #7a1f3d;
+      --brand-dark: #5c1010;
+      --brand-deep: #3d0a0a;
+      --gold: #c9962c;
+      --gold-dark: #a97a1c;
+      --cream: #f6e6c8;
       --muted: #f7f7f7;
       --card-border: #e0e0e0;
       --text-dark: #333;
@@ -45,24 +42,17 @@
       padding: 20px 0;
       text-align: center;
     }
-
-    .site-header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-    }
-
-    .tagline {
-      margin-top: 6px;
-      font-size: 1rem;
-      opacity: 0.9;
-    }
+    .site-header h1 { margin: 0; font-size: 1.8rem; }
+    .tagline { margin-top: 6px; font-size: 1rem; opacity: 0.9; }
 
     /* NAV */
     .primary-nav {
       background: #fff;
       border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-
     .nav-links {
       list-style: none;
       padding: 0;
@@ -72,15 +62,16 @@
       justify-content: center;
       gap: 16px;
     }
-
     .nav-links a {
       text-decoration: none;
       color: var(--text-dark);
       font-weight: bold;
       padding: 10px;
+      font-size: 0.92rem;
     }
+    .nav-links a:hover { color: var(--brand); }
 
-    /* RESPONSIVE HERO */
+    /* HERO */
     .hero {
       display: flex;
       flex-wrap: wrap;
@@ -91,57 +82,40 @@
       padding: 40px 20px;
       border-radius: 0 0 var(--radius) var(--radius);
     }
-
-    .hero-text {
-      flex: 1;
-      min-width: 280px;
-      padding-right: 20px;
+    .hero-text { flex: 1; min-width: 280px; padding-right: 20px; }
+    .hero-text h1 { font-size: 2rem; margin: 0; }
+    .hero-text p { font-size: 1.1rem; margin-top: 10px; opacity: 0.95; }
+    .hero-text .cta-button {
+      display: inline-block;
+      margin-top: 22px;
+      background: var(--gold);
+      color: #3d0a0a;
+      font-weight: 700;
+      padding: 12px 26px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: transform 0.2s ease;
     }
-
-    .hero-text h1 {
-      font-size: 2rem;
-      margin: 0;
-    }
-
-    .hero-text p {
-      font-size: 1.1rem;
-      margin-top: 10px;
-      opacity: 0.95;
-    }
-
+    .hero-text .cta-button:hover { transform: translateY(-2px); }
     .hero-photo {
       flex: 1;
-      max-width: 380px;
+      max-width: 320px;
       border-radius: var(--radius);
       object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
-    /* Tablet circular crop */
     @media (max-width: 900px) {
-      .hero-photo {
-        max-width: 240px;
-        border-radius: 50%;
-      }
+      .hero-photo { max-width: 220px; border-radius: 50%; }
     }
-
-    /* Mobile full portrait */
     @media (max-width: 600px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero-photo {
-        width: 100%;
-        max-width: 100%;
-        border-radius: 0;
-      }
+      .hero { flex-direction: column; text-align: center; }
+      .hero-text { padding-right: 0; }
+      .hero-photo { width: 180px; max-width: 180px; margin-top: 24px; }
     }
 
     /* SECTIONS */
-    .section {
-      margin-top: 40px;
-    }
-
+    .section { margin-top: 40px; }
     .section h2 {
       font-size: 1.4rem;
       border-bottom: 2px solid #ddd;
@@ -155,7 +129,6 @@
       gap: 16px;
       margin-top: 20px;
     }
-
     .card {
       background: #fff;
       border: 1px solid var(--card-border);
@@ -164,455 +137,10 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
       transition: transform .2s ease, box-shadow .2s ease;
     }
-
     .card:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
-
-    .card h3 {
-      margin-top: 0;
-      color: var(--brand);
-      font-size: 1.2rem;
-    }
-
-    /* DOWNLOAD CENTER */
-    .download-link {
-      display: block;
-      margin-top: 8px;
-      padding: 10px;
-      background: var(--brand);
-      color: #fff;
-      text-align: center;
-      border-radius: var(--radius);
-      text-decoration: none;
-    }
-
-    /* DATE PICKERS */
-    .date-picker {
-      width: 100%;
-      padding: 10px;
-      margin-top: 8px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-
-    /* PROGRESS BAR */
-    .progress-wrapper {
-      margin-top: 20px;
-    }
-
-    .progress-bar {
-      width: 100%;
-      background: #eee;
-      border-radius: 10px;
-      height: 20px;
-    }
-
-    .progress-fill {
-      height: 20px;
-      background: var(--brand);
-      border-radius: 10px;
-      transition: width .4s ease;
-    }
-
-    /* CLIENT PORTAL LOCK */
-    #portal { display: none; }
-
-    /* FOOTER */
-    .footer-brand {
-      margin-top: 60px;
-      padding: 20px;
-      background: var(--muted);
-      text-align: center;
-      border-top: 1px solid #ddd;
-    }
-  </style>
-</head>
-
-<body>
-
-<header class="site-header">
-  <h1>Wheeler Fortune BA Coaching Hub</h1>
-  <p class="tagline">Clarity • Alignment • Professional Growth</p>
-</header>
-
-<nav class="primary-nav">
-  <ul class="nav-links">
-    <li><a href="#identity">Identity</a></li>
-    <li><a href="#mission">Mission</a></li>
-    <li><a href="#framework">Framework</a></li>
-    <li><a href="#align">ALIGN Method</a></li>
-    <li><a href="#programs">Programs</a></li>
-    <li><a href="#8week">8‑Week Program</a></li>
-    <li><a href="#calendar">Calendar</a></li>
-    <li><a href="#portal">Client Portal</a></li>
-    <li><a href="#downloads">Download Center</a></li>
-  </ul>
-</nav>
-
-<section class="hero">
-  <div class="hero-text">
-    <h1>Business Analysis Coaching for High‑Achieving Professionals</h1>
-    <p>Empowering you to elevate your BA skills, strengthen your confidence, and accelerate your career trajectory.</p>
-  </div>
-
-  <img src="Images/github/Index.jpeg" class="hero-photo" alt="Catrina Wheeler Portrait">
-</section>
-
-<div class="container">
-
-<!-- IDENTITY -->
-<section id="identity" class="section">
-  <h2>Company Identity</h2>
-  <p>Wheeler Fortune Business Support Consulting LLC is a coaching and business support practice specializing in clarity, alignment, and structured personal and professional development.</p>
-  <p><strong>Location:</strong> Willingboro, NJ</p>
-  <p><strong>Primary Offering:</strong> Clarity & Alignment Coaching™</p>
-  <p><strong>Brand Promise:</strong> Structured clarity, aligned action, and measurable progress.</p>
-</section>
-
-<!-- MISSION -->
-<section id="mission" class="section">
-  <h2>Mission, Vision & Values</h2>
-  <p><strong>Mission:</strong> Empower individuals to gain clarity, align their actions with their goals, and build sustainable progress through structured coaching.</p>
-  <p><strong>Vision:</strong> To become a trusted coaching practice known for operational clarity, personal alignment, and transformative growth.</p>
-  <p><strong>Core Values:</strong> Clarity • Alignment • Integrity • Progress • Empowerment</p>
-</section>
-
-<!-- PHILOSOPHY -->
-<section id="philosophy" class="section">
-  <h2>Coaching Philosophy</h2>
-  <p>Clarity & Alignment Coaching™ is grounded in ethical, structured, client‑centered support that empowers clients to make aligned decisions and achieve measurable progress.</p>
-</section>
-
-<!-- FRAMEWORK -->
-<section id="framework" class="section">
-  <h2>Clarity & Alignment Coaching™ Framework</h2>
-  <ul>
-    <li>Clarity discovery</li>
-    <li>Alignment mapping</li>
-    <li>Goal structuring</li>
-    <li>Action planning</li>
-    <li>Accountability</li>
-    <li>Progress evaluation</li>
-  </ul>
-</section>
-
-<!-- ALIGN METHOD -->
-<section id="align" class="section">
-  <h2>The ALIGN Method™</h2>
-  <ol>
-    <li>A — Assess current state</li>
-    <li>L — Locate misalignment</li>
-    <li>I — Identify goals</li>
-    <li>G — Generate action steps</li>
-    <li>N — Navigate progress</li>
-  </ol>
-</section>
-
-<!-- PROGRAMS -->
-<section id="programs" class="section">
-  <h2>Coaching Programs</h2>
-  <div class="card-grid">
-    <div class="card"><h3>Clarity & Alignment Coaching™</h3></div>
-    <div class="card"><h3>BA Skills Accelerator</h3></div>
-    <div class="card"><h3>Career Strategy Intensive</h3></div>
-    <div class="card"><h3>Executive BA Coaching</h3></div>
-  </div>
-</section>
-<div class="cta-center">
-  <a href="#contact" class="cta-button">Start Your Coaching Journey</a>
-</div>
-<!-- 8 WEEK -->
-<section id="8week" class="section">
-  <h2>8‑Week BA Coaching Program Schedule</h2>
-
-  <div class="card-grid">
-
-    <div class="card">
-      <h3>Week 1 — Foundations & Clarity</h3>
-      <p>Program onboarding, BA competency assessment, clarity mapping, and goal alignment.</p>
-    </div>
-
-    <div class="card">
-      <h3>Week 2 — Requirements Mastery</h3>
-      <p>Business requirements vs. functional requirements, elicitation techniques, and requirement structuring.</p>
-    </div>
-
-    <div class="card">
-      <h3>Week 3 — Process Mapping</h3>
-      <p>Workflow analysis, BPMN fundamentals, swimlane diagrams, and process optimization.</p>
-    </div>
-
-    <div class="card">
-      <h3>Week 4 — Stakeholder Engagement</h3>
-      <p>Stakeholder analysis, communication strategies, conflict navigation, and influence techniques.</p>
-    </div>
-
-    <div class="card">
-      <h3>Week 5 — Agile & Scrum BA</h3>
-      <p>User stories, acceptance criteria, backlog refinement, and Agile ceremonies.</p>
-    </div>
-
-    <div class="card">
-      <h3>Week 6 — Technical BA Skills</h3>
-      <p>API literacy, data mapping, systems thinking, and integration fundamentals.</p>
-    </div>
-
-    <div class="card">
-      <h3>Week 7 — Testing & Traceability</h3>
-      <p>UAT planning, test case design, RTM development, and defect triage.</p>
-    </div>
-
-    <div class="card">
-      <h3>Week 8 — Career Strategy & Portfolio</h3>
-      <p>Resume refinement, BA portfolio creation, interview coaching, and certification planning.</p>
-    </div>
-
-  </div>
-
-  <!-- Progress Bar -->
-  <div class="progress-wrapper">
-    <label>Program Progress</label>
-    <div class="progress-bar">
-      <div class="progress-fill" id="progressFill"></div>
-    </div>
-  </div>
-
-  <!-- Downloads -->
-  <div class="card">
-    <h3>Download 8‑Week Coaching Schedule</h3>
-    <a class="download-link" href="files/8WeekSchedule.pdf" download>Download PDF</a>
-    <a class="download-link" href="files/8WeekSchedule.docx" download>Download Word</a>
-  </div>
-</section>
-
-<!-- CALENDAR -->
-<section id="calendar" class="section">
-  <h2>Coaching Calendar</h2>
-  <p>Your personalized coaching calendar helps you stay aligned, organized, and fully supported throughout your program.</p>
-
-  <div class="card-grid">
-
-    <div class="card">
-      <h3><i class="fa-solid fa-calendar-days"></i> Upcoming Sessions</h3>
-      <p>Track your scheduled coaching calls, assignments, and milestones.</p>
-    </div>
-
-    <div class="card">
-      <h3><i class="fa-solid fa-clock"></i> Schedule Your Session</h3>
-      <label>Select Date:</label>
-      <input type="date" id="sessionDate" class="date-picker">
-
-      <label>Select Time:</label>
-      <input type="time" id="sessionTime" class="date-picker">
-    </div>
-
-    <div class="card">
-      <h3><i class="fa-solid fa-check-circle"></i> Milestones</h3>
-      <p>Review your growth checkpoints and completed achievements.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- CLIENT ACCESS -->
-<section id="clientAccess" class="section">
-  <h2>Client Access</h2>
-
-  <div class="card">
-    <h3>Enter Access Code</h3>
-    <input type="password" id="accessCode" placeholder="Enter your client code">
-    <button onclick="unlockClientPortal()">Unlock</button>
-    <p id="accessMessage"></p>
-  </div>
-</section>
-
-<!-- CLIENT PORTAL -->
-<section id="portal" class="section">
-  <h2>Client Portal</h2>
-  <div class="card-grid">
-    <div class="card"><h3>Session Notes</h3></div>
-    <div class="card"><h3>Download Center</h3></div>
-    <div class="card"><h3>Advanced Templates</h3></div>
-  </div>
-</section>
-
-<!-- DOWNLOAD CENTER -->
-<section id="downloads" class="section">
-  <h2>Download Center</h2>
-
-  <div class="card-grid">
-
-    <div class="card">
-      <h3>BRD Template</h3>
-      <a class="download-link" href="files/BRD_Template.docx" download>Download Word</a>
-      <a class="download-link" href="files/BRD_Template.pdf" download>Download PDF</a>
-    </div>
-
-    <div class="card">
-      <h3>FRD Template</h3>
-      <a class="download-link" href="files/FRD_Template.docx" download>Download Word</a>
-      <a class="download-link" href="files/FRD_Template.pdf" download>Download PDF</a>
-    </div>
-
-    <div class="card">
-      <h3>RACI Matrix</h3>
-      <a class="download-link" href="files/RACI_Matrix.docx" download>Download Word</a>
-      <a class="download-link" href="files/RACI_Matrix.pdf" download>Download PDF</a>
-    </div>
-
-    <div class="card">
-      <h3>RTM Template</h3>
-      <a class="download-link" href="files/RTM_Template.docx" download>Download Word</a>
-      <a class="download-link" href="files/RTM_Template.pdf" download>Download PDF</a>
-    </div>
-
-    <div class="card">
-      <h3>UAT Template</h3>
-      <a class="download-link" href="files/UAT_Template.docx" download>Download Word</a>
-      <a class="download-link" href="files/UAT_Template.pdf" download>Download PDF</a>
-    </div>
-
-    <div class="card">
-      <h3>Workflow Guide</h3>
-      <a class="download-link" href="files/Workflow_Guide.docx" download>Download Word</a>
-      <a class="download-link" href="files/Workflow_Guide.pdf" download>Download PDF</a>
-    </div>
-
-    <div class="card">
-      <h3>Advanced BA Templates</h3>
-      <a class="download-link" href="files/API_Requirements.docx" download>API Requirements (Word)</a>
-      <a class="download-link" href="files/API_Requirements.pdf" download>API Requirements (PDF)</a>
-
-      <a class="download-link" href="files/Stakeholder_Register.docx" download>Stakeholder Register (Word)</a>
-      <a class="download-link" href="files/Stakeholder_Register.pdf" download>Stakeholder Register (PDF)</a>
-
-      <a class="download-link" href="files/Use_Case_Specs.docx" download>Use Case Specs (Word)</a>
-      <a class="download-link" href="files/Use_Case_Specs.pdf" download>Use Case Specs (PDF)</a>
-
-      <a class="download-link" href="files/Process_Maps.docx" download>Process Maps (Word)</a>
-      <<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Wheeler Fortune BA Coaching Hub</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <style>
-    :root {
-      --brand: #7a1f3d;
-      --muted: #f7f7f7;
-      --card-border: #e0e0e0;
-      --text-dark: #333;
-      --radius: 14px;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #fff;
-      color: var(--text-dark);
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .site-header {
-      background: var(--brand);
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
-
-    .site-header h1 { margin: 0; font-size: 1.8rem; }
-    .tagline { margin-top: 6px; font-size: 1rem; opacity: 0.9; }
-
-    .primary-nav {
-      background: #fff;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .nav-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 16px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-dark);
-      font-weight: bold;
-      padding: 10px;
-    }
-
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      background: var(--brand);
-      color: #fff;
-      padding: 40px 20px;
-      border-radius: 0 0 var(--radius) var(--radius);
-    }
-
-    .hero-text { flex: 1; min-width: 280px; padding-right: 20px; }
-    .hero-text h1 { font-size: 2rem; margin: 0; }
-    .hero-text p { font-size: 1.1rem; margin-top: 10px; opacity: 0.95; }
-
-    .hero-photo {
-      flex: 1;
-      max-width: 380px;
-      border-radius: var(--radius);
-      object-fit: cover;
-    }
-
-    @media (max-width: 900px) {
-      .hero-photo { max-width: 240px; border-radius: 50%; }
-    }
-
-    @media (max-width: 600px) {
-      .hero { flex-direction: column; text-align: center; }
-      .hero-photo { width: 100%; max-width: 100%; border-radius: 0; }
-    }
-
-    .section { margin-top: 40px; }
-    .section h2 {
-      font-size: 1.4rem;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 6px;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      margin-top: 20px;
-    }
-
-    .card {
-      background: #fff;
-      border: 1px solid var(--card-border);
-      padding: 20px;
-      border-radius: var(--radius);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    }
-
     .card h3 { margin-top: 0; color: var(--brand); font-size: 1.2rem; }
 
     .download-link {
@@ -635,18 +163,8 @@
     }
 
     .progress-wrapper { margin-top: 20px; }
-    .progress-bar {
-      width: 100%;
-      background: #eee;
-      border-radius: 10px;
-      height: 20px;
-    }
-    .progress-fill {
-      height: 20px;
-      background: var(--brand);
-      border-radius: 10px;
-      transition: width .4s ease;
-    }
+    .progress-bar { width: 100%; background: #eee; border-radius: 10px; height: 20px; }
+    .progress-fill { height: 20px; background: var(--brand); border-radius: 10px; transition: width .4s ease; }
 
     .footer-brand {
       margin-top: 60px;
@@ -655,12 +173,161 @@
       text-align: center;
       border-top: 1px solid #ddd;
     }
-
     .footer-links a {
       margin: 0 8px;
       color: var(--text-dark);
       text-decoration: none;
       font-size: 0.9rem;
+    }
+
+    .cta-center { text-align: center; margin: 30px 0 10px; }
+    .cta-center .cta-button {
+      display: inline-block;
+      background: var(--brand-dark);
+      color: #fff;
+      font-weight: 700;
+      padding: 14px 30px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    /* ---------- PROGRAMS SECTION ---------- */
+    #programs {
+      background: linear-gradient(180deg, #fdfaf6 0%, #f7efe6 100%);
+      padding: 60px 20px;
+      margin-top: 40px;
+      border-radius: var(--radius);
+    }
+    .wf-programs-header { text-align: center; max-width: 720px; margin: 0 auto 46px; }
+    .wf-programs-eyebrow {
+      display: inline-block;
+      background: #8a1c1c;
+      color: var(--cream);
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+    .wf-programs-header h2 {
+      font-size: 2.2rem; color: var(--brand-dark); margin: 0 0 14px; font-weight: 800; border: none;
+    }
+    .wf-programs-header p { color: #5a4a42; font-size: 1.02rem; line-height: 1.6; }
+
+    .wf-programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 26px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+    .wf-card {
+      position: relative;
+      background: #fffdfb;
+      border: 1px solid #ecdfd0;
+      border-radius: 18px;
+      padding: 30px 24px 26px;
+      box-shadow: 0 6px 20px rgba(90, 20, 20, 0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .wf-card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(90, 20, 20, 0.14); }
+    .wf-card-badge {
+      position: absolute; top: -14px; right: 20px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; padding: 6px 14px; border-radius: 999px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .wf-card-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 16px;
+      background: linear-gradient(135deg, #8a1c1c, var(--brand-dark));
+      color: var(--cream);
+    }
+    .wf-card h3 { font-size: 1.25rem; color: var(--brand-dark); margin: 0 0 8px; font-weight: 700; border: none; }
+    .wf-card .wf-tagline {
+      font-size: 0.82rem; color: var(--gold-dark); font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;
+    }
+    .wf-card p.wf-desc { color: #4a3d36; font-size: 0.94rem; line-height: 1.6; margin-bottom: 16px; flex-grow: 1; }
+    .wf-card ul.wf-includes { list-style: none; padding: 0; margin: 0 0 18px; }
+    .wf-card ul.wf-includes li {
+      font-size: 0.86rem; color: #5a4a42; padding-left: 22px; position: relative;
+      margin-bottom: 8px; line-height: 1.4;
+    }
+    .wf-card ul.wf-includes li::before {
+      content: "✓"; position: absolute; left: 0; top: 0; color: #8a1c1c; font-weight: 700;
+    }
+    .wf-card-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid #f0e2d2; padding-top: 14px; margin-top: auto;
+    }
+    .wf-card-meta { font-size: 0.78rem; color: #8a1c1c; font-weight: 700; }
+    .wf-card-cta {
+      display: inline-block; background: var(--brand-dark); color: #fff;
+      font-size: 0.8rem; font-weight: 700; padding: 9px 16px; border-radius: 8px;
+      text-decoration: none; transition: background 0.2s ease;
+    }
+    .wf-card-cta:hover { background: #8a1c1c; }
+
+    .wf-compare-wrap {
+      max-width: 1200px; margin: 0 auto 60px; overflow-x: auto;
+      border-radius: 18px; box-shadow: 0 10px 30px rgba(90, 20, 20, 0.08);
+    }
+    table.wf-compare { width: 100%; border-collapse: collapse; background: #fffdfb; min-width: 700px; }
+    table.wf-compare caption { text-align: left; font-size: 1.3rem; font-weight: 800; color: var(--brand-dark); padding: 22px 22px 4px; }
+    table.wf-compare thead th {
+      background: var(--brand-dark); color: var(--cream); font-size: 0.88rem;
+      text-align: left; padding: 14px 18px; font-weight: 700;
+    }
+    table.wf-compare thead th:first-child { background: var(--brand-deep); }
+    table.wf-compare tbody td {
+      padding: 13px 18px; font-size: 0.86rem; color: #4a3d36;
+      border-bottom: 1px solid #f0e2d2; vertical-align: top; line-height: 1.5;
+    }
+    table.wf-compare tbody td:first-child {
+      font-weight: 700; color: var(--brand-dark); background: #fbf3e8; white-space: nowrap;
+    }
+    table.wf-compare tbody tr:last-child td { border-bottom: none; }
+    table.wf-compare tbody tr:hover td { background: #fdf7ee; }
+
+    .wf-programs-cta {
+      max-width: 1000px; margin: 0 auto;
+      background: linear-gradient(135deg, var(--brand-dark), #8a1c1c);
+      border-radius: 22px; padding: 50px 36px; text-align: center; color: #fff;
+      position: relative; overflow: hidden;
+    }
+    .wf-programs-cta::before {
+      content: ""; position: absolute; top: -60px; right: -60px;
+      width: 220px; height: 220px; background: rgba(246, 230, 200, 0.12); border-radius: 50%;
+    }
+    .wf-programs-cta h3 { font-size: 1.7rem; margin: 0 0 12px; font-weight: 800; position: relative; }
+    .wf-programs-cta p {
+      font-size: 1rem; color: var(--cream); max-width: 540px;
+      margin: 0 auto 24px; line-height: 1.6; position: relative;
+    }
+    .wf-cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
+    .wf-btn-primary {
+      background: var(--cream); color: var(--brand-dark); font-weight: 700;
+      padding: 13px 26px; border-radius: 10px; text-decoration: none; font-size: 0.92rem;
+      transition: transform 0.2s ease;
+    }
+    .wf-btn-primary:hover { transform: translateY(-2px); }
+    .wf-btn-secondary {
+      background: transparent; color: var(--cream); font-weight: 700;
+      padding: 13px 26px; border-radius: 10px; text-decoration: none; font-size: 0.92rem;
+      border: 2px solid var(--cream); transition: background 0.2s ease;
+    }
+    .wf-btn-secondary:hover { background: rgba(246, 230, 200, 0.12); }
+
+    @media (max-width: 640px) {
+      .wf-programs-header h2 { font-size: 1.8rem; }
+      .wf-programs-cta { padding: 36px 20px; }
     }
   </style>
 </head>
@@ -688,37 +355,41 @@
 
 <section class="hero">
   <div class="hero-text">
-    <h1>Business Analysis Coaching for High‑Achieving Professionals</h1>
-    <p>Empowering you to elevate your BA skills, strengthen your confidence, and accelerate your career trajectory.</p>
+    <h1>Clarity‑Driven Coaching for High‑Achieving Professionals</h1>
+    <p>Move from overwhelm to alignment with structured coaching, BA frameworks, and a repeatable system for confident decision‑making.</p>
+    <a href="#programs" class="cta-button">Explore Coaching Programs</a>
   </div>
-
-  <img src="Images/github/Index.jpeg" class="hero-photo" alt="Catrina Wheeler Portrait">
+  <img src="Cat.headshot.jpg" class="hero-photo" alt="Catrina Wheeler Portrait">
 </section>
 
 <div class="container">
 
+  <!-- IDENTITY -->
   <section id="identity" class="section">
     <h2>Company Identity</h2>
     <p>Wheeler Fortune Business Support Consulting LLC is a coaching and business support practice specializing in clarity, alignment, and structured personal and professional development.</p>
     <p><strong>Location:</strong> Willingboro, NJ</p>
-    <p><strong>Primary Offering:</strong> Clarity & Alignment Coaching™</p>
+    <p><strong>Primary Offering:</strong> Clarity &amp; Alignment Coaching™</p>
     <p><strong>Brand Promise:</strong> Structured clarity, aligned action, and measurable progress.</p>
   </section>
 
+  <!-- MISSION -->
   <section id="mission" class="section">
-    <h2>Mission, Vision & Values</h2>
+    <h2>Mission, Vision &amp; Values</h2>
     <p><strong>Mission:</strong> Empower individuals to gain clarity, align their actions with their goals, and build sustainable progress through structured coaching.</p>
     <p><strong>Vision:</strong> To become a trusted coaching practice known for operational clarity, personal alignment, and transformative growth.</p>
     <p><strong>Core Values:</strong> Clarity • Alignment • Integrity • Progress • Empowerment</p>
   </section>
 
+  <!-- PHILOSOPHY -->
   <section id="philosophy" class="section">
     <h2>Coaching Philosophy</h2>
-    <p>Clarity & Alignment Coaching™ is grounded in ethical, structured, client‑centered support that empowers clients to make aligned decisions and achieve measurable progress.</p>
+    <p>Clarity &amp; Alignment Coaching™ is grounded in ethical, structured, client‑centered support that empowers clients to make aligned decisions and achieve measurable progress.</p>
   </section>
 
+  <!-- FRAMEWORK -->
   <section id="framework" class="section">
-    <h2>Clarity & Alignment Coaching™ Framework</h2>
+    <h2>Clarity &amp; Alignment Coaching™ Framework</h2>
     <ul>
       <li>Clarity discovery</li>
       <li>Alignment mapping</li>
@@ -729,6 +400,7 @@
     </ul>
   </section>
 
+  <!-- ALIGN METHOD -->
   <section id="align" class="section">
     <h2>The ALIGN Method™</h2>
     <ol>
@@ -740,797 +412,232 @@
     </ol>
   </section>
 
-  
-<style>
-  #programs {
-    background: linear-gradient(180deg, #fdfaf6 0%, #f7efe6 100%);
-    padding: 80px 20px;
-  }
+  <!-- ================= PROGRAMS ================= -->
+  <section id="programs">
 
-  .wf-programs-header {
-    text-align: center;
-    max-width: 720px;
-    margin: 0 auto 56px;
-  }
-
-  .wf-programs-eyebrow {
-    display: inline-block;
-    background: #8a1c1c;
-    color: #f6e6c8;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 6px 16px;
-    border-radius: 999px;
-    margin-bottom: 18px;
-    font-weight: 600;
-  }
-
-  .wf-programs-header h2 {
-    font-size: 2.4rem;
-    color: #5c1010;
-    margin: 0 0 14px;
-    font-weight: 800;
-  }
-
-  .wf-programs-header p {
-    color: #5a4a42;
-    font-size: 1.05rem;
-    line-height: 1.6;
-  }
-
-  /* ---------- Program Cards ---------- */
-  .wf-programs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    gap: 28px;
-    max-width: 1200px;
-    margin: 0 auto 72px;
-  }
-
-  .wf-card {
-    position: relative;
-    background: #fffdfb;
-    border: 1px solid #ecdfd0;
-    border-radius: 18px;
-    padding: 32px 26px 28px;
-    box-shadow: 0 6px 20px rgba(90, 20, 20, 0.06);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .wf-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 32px rgba(90, 20, 20, 0.14);
-  }
-
-  .wf-card-badge {
-    position: absolute;
-    top: -14px;
-    right: 20px;
-    background: linear-gradient(135deg, #c9962c, #a97a1c);
-    color: #fff;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: 999px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  }
-
-  .wf-card-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
-    margin-bottom: 18px;
-    background: linear-gradient(135deg, #8a1c1c, #5c1010);
-    color: #f6e6c8;
-  }
-
-  .wf-card h3 {
-    font-size: 1.3rem;
-    color: #5c1010;
-    margin: 0 0 8px;
-    font-weight: 700;
-  }
-
-  .wf-card .wf-tagline {
-    font-size: 0.85rem;
-    color: #a97a1c;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 14px;
-  }
-
-  .wf-card p.wf-desc {
-    color: #4a3d36;
-    font-size: 0.96rem;
-    line-height: 1.6;
-    margin-bottom: 18px;
-    flex-grow: 1;
-  }
-
-  .wf-card ul.wf-includes {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px;
-  }
-
-  .wf-card ul.wf-includes li {
-    font-size: 0.88rem;
-    color: #5a4a42;
-    padding-left: 22px;
-    position: relative;
-    margin-bottom: 8px;
-    line-height: 1.4;
-  }
-
-  .wf-card ul.wf-includes li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #8a1c1c;
-    font-weight: 700;
-  }
-
-  .wf-card-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid #f0e2d2;
-    padding-top: 16px;
-    margin-top: auto;
-  }
-
-  .wf-card-meta {
-    font-size: 0.8rem;
-    color: #8a1c1c;
-    font-weight: 700;
-  }
-
-  .wf-card-cta {
-    display: inline-block;
-    background: #5c1010;
-    color: #fff;
-    font-size: 0.82rem;
-    font-weight: 700;
-    padding: 9px 18px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 0.2s ease;
-  }
-
-  .wf-card-cta:hover {
-    background: #8a1c1c;
-  }
-
-  /* ---------- Comparison Table ---------- */
-  .wf-compare-wrap {
-    max-width: 1200px;
-    margin: 0 auto 72px;
-    overflow-x: auto;
-    border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(90, 20, 20, 0.08);
-  }
-
-  table.wf-compare {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fffdfb;
-    min-width: 720px;
-  }
-
-  table.wf-compare caption {
-    text-align: left;
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: #5c1010;
-    padding: 24px 24px 4px;
-  }
-
-  table.wf-compare thead th {
-    background: #5c1010;
-    color: #f6e6c8;
-    font-size: 0.9rem;
-    text-align: left;
-    padding: 16px 20px;
-    font-weight: 700;
-  }
-
-  table.wf-compare thead th:first-child {
-    background: #3d0a0a;
-  }
-
-  table.wf-compare tbody td {
-    padding: 14px 20px;
-    font-size: 0.88rem;
-    color: #4a3d36;
-    border-bottom: 1px solid #f0e2d2;
-    vertical-align: top;
-    line-height: 1.5;
-  }
-
-  table.wf-compare tbody td:first-child {
-    font-weight: 700;
-    color: #5c1010;
-    background: #fbf3e8;
-    white-space: nowrap;
-  }
-
-  table.wf-compare tbody tr:last-child td {
-    border-bottom: none;
-  }
-
-  table.wf-compare tbody tr:hover td {
-    background: #fdf7ee;
-  }
-
-  /* ---------- CTA Block ---------- */
-  .wf-programs-cta {
-    max-width: 1000px;
-    margin: 0 auto;
-    background: linear-gradient(135deg, #5c1010, #8a1c1c);
-    border-radius: 22px;
-    padding: 56px 40px;
-    text-align: center;
-    color: #fff;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .wf-programs-cta::before {
-    content: "";
-    position: absolute;
-    top: -60px;
-    right: -60px;
-    width: 220px;
-    height: 220px;
-    background: rgba(246, 230, 200, 0.12);
-    border-radius: 50%;
-  }
-
-  .wf-programs-cta h3 {
-    font-size: 1.9rem;
-    margin: 0 0 14px;
-    font-weight: 800;
-    position: relative;
-  }
-
-  .wf-programs-cta p {
-    font-size: 1.02rem;
-    color: #f6e6c8;
-    max-width: 560px;
-    margin: 0 auto 28px;
-    line-height: 1.6;
-    position: relative;
-  }
-
-  .wf-cta-buttons {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: relative;
-  }
-
-  .wf-btn-primary {
-    background: #f6e6c8;
-    color: #5c1010;
-    font-weight: 700;
-    padding: 14px 28px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: transform 0.2s ease;
-  }
-
-  .wf-btn-primary:hover {
-    transform: translateY(-2px);
-  }
-
-  .wf-btn-secondary {
-    background: transparent;
-    color: #f6e6c8;
-    font-weight: 700;
-    padding: 14px 28px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 0.95rem;
-    border: 2px solid #f6e6c8;
-    transition: background 0.2s ease;
-  }
-
-  .wf-btn-secondary:hover {
-    background: rgba(246, 230, 200, 0.12);
-  }
-
-  @media (max-width: 640px) {
-    .wf-programs-header h2 { font-size: 1.9rem; }
-    .wf-programs-cta { padding: 40px 22px; }
-  }
-</style>
-
-<section id="programs">
-
-  <div class="wf-programs-header">
-    <span class="wf-programs-eyebrow">Coaching Programs</span>
-    <h2>Find the Path That Fits Where You Are</h2>
-    <p>
-      Every program is built on the Clarity &amp; Alignment Coaching™ framework —
-      but each one is designed for a different stage of your BA journey, from
-      foundational clarity to executive-level mastery. Compare below to find
-      your fit.
-    </p>
-  </div>
-
-  <div class="wf-programs-grid">
-
-    <!-- Program 1 -->
-    <div class="wf-card">
-      <div class="wf-card-icon">🧭</div>
-      <h3>Clarity &amp; Alignment Coaching™</h3>
-      <div class="wf-tagline">Foundational</div>
-      <p class="wf-desc">
-        Stop spinning in overwhelm and start moving with intention. This is
-        the entry point into structured coaching — where we cut through
-        noise, name what's actually misaligned, and build a plan you'll
-        follow through on.
+    <div class="wf-programs-header">
+      <span class="wf-programs-eyebrow">Coaching Programs</span>
+      <h2>Find the Path That Fits Where You Are</h2>
+      <p>
+        Every program is built on the Clarity &amp; Alignment Coaching™ framework —
+        but each one is designed for a different stage of your BA journey, from
+        foundational clarity to executive-level mastery. Compare below to find
+        your fit.
       </p>
-      <ul class="wf-includes">
-        <li>1:1 clarity discovery sessions</li>
-        <li>Personal alignment mapping</li>
-        <li>Goal structuring &amp; action planning</li>
-        <li>Built-in accountability check-ins</li>
-      </ul>
-      <div class="wf-card-footer">
-        <span class="wf-card-meta">6 Weeks · 1:1</span>
-        <a href="#contact" class="wf-card-cta">Start Here</a>
-      </div>
     </div>
 
-    <!-- Program 2 -->
-    <div class="wf-card">
-      <span class="wf-card-badge">Most Popular</span>
-      <div class="wf-card-icon">🛠️</div>
-      <h3>BA Skills Accelerator</h3>
-      <div class="wf-tagline">Hands-On Skill Building</div>
-      <p class="wf-desc">
-        Turn BA theory into muscle memory. You'll leave with real templates,
-        real frameworks, and the confidence to run requirements sessions,
-        map processes, and write acceptance criteria that hold up under
-        scrutiny.
+    <div class="wf-programs-grid">
+
+      <div class="wf-card">
+        <div class="wf-card-icon">🧭</div>
+        <h3>Clarity &amp; Alignment Coaching™</h3>
+        <div class="wf-tagline">Foundational</div>
+        <p class="wf-desc">
+          Stop spinning in overwhelm and start moving with intention. This is
+          the entry point into structured coaching — where we cut through
+          noise, name what's actually misaligned, and build a plan you'll
+          follow through on.
+        </p>
+        <ul class="wf-includes">
+          <li>1:1 clarity discovery sessions</li>
+          <li>Personal alignment mapping</li>
+          <li>Goal structuring &amp; action planning</li>
+          <li>Built-in accountability check-ins</li>
+        </ul>
+        <div class="wf-card-footer">
+          <span class="wf-card-meta">6 Weeks · 1:1</span>
+          <a href="#contact" class="wf-card-cta">Start Here</a>
+        </div>
+      </div>
+
+      <div class="wf-card">
+        <span class="wf-card-badge">Most Popular</span>
+        <div class="wf-card-icon">🛠️</div>
+        <h3>BA Skills Accelerator</h3>
+        <div class="wf-tagline">Hands-On Skill Building</div>
+        <p class="wf-desc">
+          Turn BA theory into muscle memory. You'll leave with real templates,
+          real frameworks, and the confidence to run requirements sessions,
+          map processes, and write acceptance criteria that hold up under
+          scrutiny.
+        </p>
+        <ul class="wf-includes">
+          <li>Requirements, process mapping &amp; RTM practice</li>
+          <li>Agile &amp; Scrum ceremony walkthroughs</li>
+          <li>Live template library (BRD, FRD, RACI, UAT)</li>
+          <li>Guided real-project application</li>
+        </ul>
+        <div class="wf-card-footer">
+          <span class="wf-card-meta">8 Weeks · 1:1</span>
+          <a href="#contact" class="wf-card-cta">Accelerate</a>
+        </div>
+      </div>
+
+      <div class="wf-card">
+        <div class="wf-card-icon">🚀</div>
+        <h3>Career Strategy Intensive</h3>
+        <div class="wf-tagline">Fast-Track Sprint</div>
+        <p class="wf-desc">
+          Built for the professional with a deadline — a promotion cycle, a
+          job search, a title change. A focused sprint to sharpen your
+          positioning, rebuild your narrative, and walk into your next
+          conversation ready to win it.
+        </p>
+        <ul class="wf-includes">
+          <li>CV &amp; portfolio optimization</li>
+          <li>Interview &amp; promotion-case coaching</li>
+          <li>Personal brand &amp; positioning strategy</li>
+          <li>90-day advancement roadmap</li>
+        </ul>
+        <div class="wf-card-footer">
+          <span class="wf-card-meta">4 Weeks · 1:1</span>
+          <a href="#contact" class="wf-card-cta">Fast-Track Me</a>
+        </div>
+      </div>
+
+      <div class="wf-card">
+        <div class="wf-card-icon">🎯</div>
+        <h3>Executive BA Coaching</h3>
+        <div class="wf-tagline">Senior &amp; Leadership</div>
+        <p class="wf-desc">
+          For the analyst who's already respected but ready to lead. We work
+          at the strategic altitude — influence without authority, executive
+          communication, and the judgment calls that separate senior BAs from
+          the ones running the room.
+        </p>
+        <ul class="wf-includes">
+          <li>Executive presence &amp; communication coaching</li>
+          <li>Complex stakeholder &amp; conflict strategy</li>
+          <li>Enterprise-level process &amp; governance advising</li>
+          <li>Leadership &amp; mentorship development</li>
+        </ul>
+        <div class="wf-card-footer">
+          <span class="wf-card-meta">Custom · 1:1</span>
+          <a href="#contact" class="wf-card-cta">Inquire</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="wf-compare-wrap">
+      <table class="wf-compare">
+        <caption>Compare Programs at a Glance</caption>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Clarity &amp; Alignment</th>
+            <th>BA Skills Accelerator</th>
+            <th>Career Strategy Intensive</th>
+            <th>Executive BA Coaching</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Best For</td>
+            <td>Anyone needing direction &amp; confidence</td>
+            <td>Analysts building technical BA skill</td>
+            <td>Professionals facing a deadline (promotion, job search)</td>
+            <td>Senior BAs &amp; leaders driving strategy</td>
+          </tr>
+          <tr>
+            <td>Duration</td>
+            <td>6 Weeks</td>
+            <td>8 Weeks</td>
+            <td>4 Weeks</td>
+            <td>Custom (Ongoing)</td>
+          </tr>
+          <tr>
+            <td>Format</td>
+            <td>1:1 Coaching</td>
+            <td>1:1 Coaching + Templates</td>
+            <td>1:1 Intensive Sprint</td>
+            <td>1:1 Strategic Advisory</td>
+          </tr>
+          <tr>
+            <td>Core Focus</td>
+            <td>Clarity, alignment, goal-setting</td>
+            <td>Requirements, process mapping, Agile, RTM</td>
+            <td>CV, brand, interview &amp; promotion readiness</td>
+            <td>Executive presence, governance, influence</td>
+          </tr>
+          <tr>
+            <td>Deliverables</td>
+            <td>Alignment map, action plan</td>
+            <td>BRD/FRD/RACI/UAT template kit</td>
+            <td>Updated CV, portfolio, 90-day roadmap</td>
+            <td>Leadership development plan</td>
+          </tr>
+          <tr>
+            <td>Accountability</td>
+            <td>Weekly check-ins</td>
+            <td>Weekly sessions + practice reviews</td>
+            <td>Twice-weekly sprints</td>
+            <td>Flexible cadence</td>
+          </tr>
+          <tr>
+            <td>Investment</td>
+            <td>Contact for pricing</td>
+            <td>Contact for pricing</td>
+            <td>Contact for pricing</td>
+            <td>Custom quote</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="wf-programs-cta">
+      <h3>Not Sure Which Program Fits?</h3>
+      <p>
+        Book a free 20-minute clarity call. We'll talk through where you are,
+        where you want to be, and I'll recommend the program that gets you
+        there fastest — no pressure, no obligation.
       </p>
-      <ul class="wf-includes">
-        <li>Requirements, process mapping &amp; RTM practice</li>
-        <li>Agile &amp; Scrum ceremony walkthroughs</li>
-        <li>Live template library (BRD, FRD, RACI, UAT)</li>
-        <li>Guided real-project application</li>
-      </ul>
-      <div class="wf-card-footer">
-        <span class="wf-card-meta">8 Weeks · 1:1</span>
-        <a href="#contact" class="wf-card-cta">Accelerate</a>
+      <div class="wf-cta-buttons">
+        <a href="#contact" class="wf-btn-primary">Book Your Free Clarity Call</a>
+        <a href="#8week" class="wf-btn-secondary">See the 8-Week Curriculum</a>
       </div>
     </div>
 
-    <!-- Program 3 -->
-    <div class="wf-card">
-      <div class="wf-card-icon">🚀</div>
-      <h3>Career Strategy Intensive</h3>
-      <div class="wf-tagline">Fast-Track Sprint</div>
-      <p class="wf-desc">
-        Built for the professional with a deadline — a promotion cycle, a
-        job search, a title change. A focused sprint to sharpen your
-        positioning, rebuild your narrative, and walk into your next
-        conversation ready to win it.
-      </p>
-      <ul class="wf-includes">
-        <li>CV &amp; portfolio optimization</li>
-        <li>Interview &amp; promotion-case coaching</li>
-        <li>Personal brand &amp; positioning strategy</li>
-        <li>90-day advancement roadmap</li>
-      </ul>
-      <div class="wf-card-footer">
-        <span class="wf-card-meta">4 Weeks · 1:1</span>
-        <a href="#contact" class="wf-card-cta">Fast-Track Me</a>
-      </div>
-    </div>
+  </section>
+  <!-- ================= END PROGRAMS ================= -->
 
-    <!-- Program 4 -->
-    <div class="wf-card">
-      <div class="wf-card-icon">🎯</div>
-      <h3>Executive BA Coaching</h3>
-      <div class="wf-tagline">Senior &amp; Leadership</div>
-      <p class="wf-desc">
-        For the analyst who's already respected but ready to lead. We work
-        at the strategic altitude — influence without authority, executive
-        communication, and the judgment calls that separate senior BAs from
-        the ones running the room.
-      </p>
-      <ul class="wf-includes">
-        <li>Executive presence &amp; communication coaching</li>
-        <li>Complex stakeholder &amp; conflict strategy</li>
-        <li>Enterprise-level process &amp; governance advising</li>
-        <li>Leadership &amp; mentorship development</li>
-      </ul>
-      <div class="wf-card-footer">
-        <span class="wf-card-meta">Custom · 1:1</span>
-        <a href="#contact" class="wf-card-cta">Inquire</a>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- ---------- Comparison Table ---------- -->
-  <div class="wf-compare-wrap">
-    <table class="wf-compare">
-      <caption>Compare Programs at a Glance</caption>
-      <thead>
-        <tr>
-          <th>Feature</th>
-          <th>Clarity &amp; Alignment</th>
-          <th>BA Skills Accelerator</th>
-          <th>Career Strategy Intensive</th>
-          <th>Executive BA Coaching</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Best For</td>
-          <td>Anyone needing direction &amp; confidence</td>
-          <td>Analysts building technical BA skill</td>
-          <td>Professionals facing a deadline (promotion, job search)</td>
-          <td>Senior BAs &amp; leaders driving strategy</td>
-        </tr>
-        <tr>
-          <td>Duration</td>
-          <td>6 Weeks</td>
-          <td>8 Weeks</td>
-          <td>4 Weeks</td>
-          <td>Custom (Ongoing)</td>
-        </tr>
-        <tr>
-          <td>Format</td>
-          <td>1:1 Coaching</td>
-          <td>1:1 Coaching + Templates</td>
-          <td>1:1 Intensive Sprint</td>
-          <td>1:1 Strategic Advisory</td>
-        </tr>
-        <tr>
-          <td>Core Focus</td>
-          <td>Clarity, alignment, goal-setting</td>
-          <td>Requirements, process mapping, Agile, RTM</td>
-          <td>CV, brand, interview &amp; promotion readiness</td>
-          <td>Executive presence, governance, influence</td>
-        </tr>
-        <tr>
-          <td>Deliverables</td>
-          <td>Alignment map, action plan</td>
-          <td>BRD/FRD/RACI/UAT template kit</td>
-          <td>Updated CV, portfolio, 90-day roadmap</td>
-          <td>Leadership development plan</td>
-        </tr>
-        <tr>
-          <td>Accountability</td>
-          <td>Weekly check-ins</td>
-          <td>Weekly sessions + practice reviews</td>
-          <td>Twice-weekly sprints</td>
-          <td>Flexible cadence</td>
-        </tr>
-        <tr>
-          <td>Investment</td>
-          <td>Contact for pricing</td>
-          <td>Contact for pricing</td>
-          <td>Contact for pricing</td>
-          <td>Custom quote</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-ection class="wf-res-section" id="skills-tools">
-  <span class="wf-res-eyebrow">BA Fundamentals</span>
-  <h2>The BA Toolkit: Skills &amp; the Platforms Behind Them</h2>
-  <p class="wf-res-sub">
-    Governance-heavy BA work runs on a specific stack — not flashy, but
-    dependable. This is the toolkit I've built over 18+ years in financial
-    services, mapped to the skill each tool actually supports.
-  </p>
-
-  <div class="wf-skills-grid">
-
-    <div class="wf-res-card wf-skill-card">
-      <div class="wf-skill-num">01</div>
-      <h4>Process Governance &amp; Documentation</h4>
-      <p>Building structured, audit-ready documentation that holds up when a regulator — or your own QA team — comes asking.</p>
-      <div class="wf-tool-tags">
-        <span class="wf-tool-tag">SharePoint</span>
-        <span class="wf-tool-tag">Microsoft Word</span>
-        <span class="wf-tool-tag">Confluence</span>
-      </div>
-    </div>
-
-    <div class="wf-res-card wf-skill-card">
-      <div class="wf-skill-num">02</div>
-      <h4>Data Governance &amp; Risk Management</h4>
-      <p>Tracking data lineage, PII exposure, and retention compliance across systems that were never designed to talk to each other.</p>
-      <div class="wf-tool-tags">
-        <span class="wf-tool-tag">RCSA Frameworks</span>
-        <span class="wf-tool-tag">ServiceNow</span>
-        <span class="wf-tool-tag">Excel</span>
-      </div>
-    </div>
-
-    <div class="wf-res-card wf-skill-card">
-      <div class="wf-skill-num">03</div>
-      <h4>Workflow Automation</h4>
-      <p>Turning a manual, five-step approval chain into something that runs itself — and actually gets adopted by the team.</p>
-      <div class="wf-tool-tags">
-        <span class="wf-tool-tag">Power Automate</span>
-        <span class="wf-tool-tag">SharePoint Lists</span>
-      </div>
-    </div>
-
-    <div class="wf-res-card wf-skill-card">
-      <div class="wf-skill-num">04</div>
-      <h4>Agile Delivery &amp; Backlog Management</h4>
-      <p>Writing stories and tracking delivery in environments that blend Agile ceremony with Waterfall-style sign-off.</p>
-      <div class="wf-tool-tags">
-        <span class="wf-tool-tag">Jira</span>
-        <span class="wf-tool-tag">Confluence</span>
-      </div>
-    </div>
-
-    <div class="wf-res-card wf-skill-card">
-      <div class="wf-skill-num">05</div>
-      <h4>Stakeholder &amp; Audit Communication</h4>
-      <p>Translating dense control language into something an executive sponsor — or an auditor — can act on in one read.</p>
-      <div class="wf-tool-tags">
-        <span class="wf-tool-tag">PowerPoint</span>
-        <span class="wf-tool-tag">Word</span>
-        <span class="wf-tool-tag">Teams</span>
-      </div>
-    </div>
-
-    <div class="wf-res-card wf-skill-card">
-      <div class="wf-skill-num">06</div>
-      <h4>HR &amp; Workforce Systems</h4>
-      <p>Supporting HR-adjacent process and reporting needs where data governance and people operations intersect.</p>
-      <div class="wf-tool-tags">
-        <span class="wf-tool-tag">Workday</span>
-        <span class="wf-tool-tag">HRIS Platforms</span>
-      </div>
-    </div>
-
-    <div class="wf-res-card wf-skill-card">
-      <div class="wf-skill-num">07</div>
-      <h4>Business Continuity Planning</h4>
-      <p>Documenting the plan nobody wants to use — but everyone needs ready when systems go down.</p>
-      <div class="wf-tool-tags">
-        <span class="wf-tool-tag">BCP Frameworks</span>
-        <span class="wf-tool-tag">SharePoint</span>
-      </div>
-    </div>
-
-    <div class="wf-res-card wf-skill-card">
-      <div class="wf-skill-num">08</div>
-      <h4>AI-Enabled Analysis</h4>
-      <p>Using AI tools to accelerate documentation, draft first passes on reports, and free up time for the judgment calls only a human can make.</p>
-      <div class="wf-tool-tags">
-        <span class="wf-tool-tag">Claude</span>
-        <span class="wf-tool-tag">Microsoft Copilot</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<div class="wf-res-divider"></div>
-
-
-<!-- ============================================================
-     3. LESSONS LEARNED — DRAFT TEMPLATE
-     (Personalize before publishing — see note)
-     ============================================================ -->
-<section class="wf-res-section" id="lessons-learned">
-  <span class="wf-res-eyebrow">Reflections</span>
-  <h2>8 Things 18 Years in Governance Taught Me</h2>
-  <p class="wf-res-sub">
-    A reflective post built from real BA/governance experience — the kind
-    that resonates because it's specific, not generic.
-  </p>
-
-  <div class="wf-draft-note">
-    <strong>Before you publish:</strong> this is a structural draft, not
-    your story. Swap each point below for a real moment from your own
-    career — the RCSA finding that changed how you documented things, the
-    audit that taught you something the hard way, the conversation that
-    shifted your approach to stakeholders. Specificity is what makes this
-    post land.
-  </div>
-
-  <div class="wf-lessons-grid">
-
-    <div class="wf-res-card wf-lesson-card">
-      <div class="wf-lesson-num">01</div>
-      <h4>Controls fail on people, not paper.</h4>
-      <p>The best-designed control framework still breaks down if the person executing it doesn't understand why it matters. Documentation alone never closed a gap — training and trust did.</p>
-    </div>
-
-    <div class="wf-res-card wf-lesson-card">
-      <div class="wf-lesson-num">02</div>
-      <h4>Audit readiness is a daily habit, not a scramble.</h4>
-      <p>Teams that update evidence continuously walk into audits calm. Teams that backfill in the final week never quite catch up — and it shows.</p>
-    </div>
-
-    <div class="wf-res-card wf-lesson-card">
-      <div class="wf-lesson-num">03</div>
-      <h4>The quietest stakeholder in the room is often the riskiest to ignore.</h4>
-      <p>The person who never pushes back isn't always aligned — sometimes they're disengaged, and disengagement is where scope gaps hide.</p>
-    </div>
-
-    <div class="wf-res-card wf-lesson-card">
-      <div class="wf-lesson-num">04</div>
-      <h4>Governance work is invisible until it isn't.</h4>
-      <p>Nobody notices the incident that didn't happen because the control worked. Learning to document and claim that value was its own skill.</p>
-    </div>
-
-    <div class="wf-res-card wf-lesson-card">
-      <div class="wf-lesson-num">05</div>
-      <h4>PII exposure hides in the most mundane places.</h4>
-      <p>Not in the systems everyone's watching — in the shared drive nobody's reviewed since 2019. Reduction work is mostly about looking where no one else is looking.</p>
-    </div>
-
-    <div class="wf-res-card wf-lesson-card">
-      <div class="wf-lesson-num">06</div>
-      <h4>A RACI conversation prevents more conflict than any escalation ever resolves.</h4>
-      <p>Most "difficult stakeholders" are really just unclear ownership wearing a person's face.</p>
-    </div>
-
-    <div class="wf-res-card wf-lesson-card">
-      <div class="wf-lesson-num">07</div>
-      <h4>Longevity is a credibility asset — use it deliberately.</h4>
-      <p>Eighteen years across institutions means pattern recognition new analysts don't have yet. Naming that expertise, rather than downplaying it, is part of leading.</p>
-    </div>
-
-    <div class="wf-res-card wf-lesson-card">
-      <div class="wf-lesson-num">08</div>
-      <h4>The promotion case writes itself when the documentation habit is already there.</h4>
-      <p>If you're tracking contributions as you go, review season is a compilation exercise, not a scramble to remember what you did in March.</p>
-    </div>
-
-  </div>
-</section>
-
-<div class="wf-res-divider"></div>
-
-
-<!-- ============================================================
-     4. FISHBONE / PARETO PROBLEM-SOLVING MINI-GUIDE
-     ============================================================ -->
-<section class="wf-res-section" id="root-cause-guide">
-  <span class="wf-res-eyebrow">BA Fundamentals</span>
-  <h2>Root Cause Analysis: Fishbone + Pareto in Practice</h2>
-  <p class="wf-res-sub">
-    Two of the most reliable tools for cutting through symptom-chasing and
-    finding the actual source of a recurring problem — used together,
-    they take you from "what's causing this" to "what's worth fixing
-    first."
-  </p>
-
-  <p style="font-size:0.92rem; color:#5a4a42; margin-bottom: 20px;">
-    <strong style="color:#5c1010;">Example problem:</strong> Recurring
-    approval delays are slowing down a monthly reporting cycle. Here's
-    how the categories break down:
-  </p>
-
-  <div class="wf-fb-categories">
-    <div class="wf-res-card wf-fb-cat">
-      <h5>👥 People</h5>
-      <ul>
-        <li>Unclear approval ownership</li>
-        <li>Competing priorities</li>
-        <li>No backup approver</li>
-      </ul>
-    </div>
-    <div class="wf-res-card wf-fb-cat">
-      <h5>⚙️ Process</h5>
-      <ul>
-        <li>Too many approval layers</li>
-        <li>No defined SLA</li>
-        <li>Inconsistent criteria</li>
-      </ul>
-    </div>
-    <div class="wf-res-card wf-fb-cat">
-      <h5>💻 Technology</h5>
-      <ul>
-        <li>Clunky approval system</li>
-        <li>Poor notifications</li>
-        <li>No mobile access</li>
-      </ul>
-    </div>
-    <div class="wf-res-card wf-fb-cat">
-      <h5>📋 Governance</h5>
-      <ul>
-        <li>No approval policy</li>
-        <li>No escalation path</li>
-        <li>SLA not enforced</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="wf-pareto-note">
-    <h4>Then Apply the 80/20 Rule</h4>
-    <p>
-      Once causes are mapped, resist the urge to fix everything at once.
-      In most recurring-problem analyses, roughly three causes account
-      for the majority of incidents. Rank causes by frequency, plot the
-      cumulative impact, and focus remediation on whichever handful cross
-      the 80% threshold first. Fixing the trivial many feels productive —
-      fixing the vital few is what actually moves the metric.
-    </p>
-  </div>
-</section>
-  <!-- ---------- CTA Block ---------- -->
-  <div class="wf-programs-cta">
-    <h3>Not Sure Which Program Fits?</h3>
-    <p>
-      Book a free 20-minute clarity call. We'll talk through where you are,
-      where you want to be, and I'll recommend the program that gets you
-      there fastest — no pressure, no obligation.
-    </p>
-    <div class="wf-cta-buttons">
-      <a href="#contact" class="wf-btn-primary">Book Your Free Clarity Call</a>
-      <a href="#8week" class="wf-btn-secondary">See the 8-Week Curriculum</a>
-    </div>
-  </div>
-
-</section>
-
-    <div class="card">
-      <h3>Clarity & Alignment Coaching™</h3>
-      <p>A structured coaching experience designed to help you eliminate confusion, define direction, and build aligned momentum.</p>
-      <p><strong>Best for:</strong> Professionals seeking clarity, confidence, and strategic growth.</p>
-    </div>
-
-    <div class="card">
-      <h3>BA Skills Accelerator</h3>
-      <p>Strengthen your business analysis toolkit with hands‑on frameworks, templates, and guided practice.</p>
-      <p><strong>Best for:</strong> Analysts ready to elevate their technical and functional BA skills.</p>
-    </div>
-
-    <div class="card">
-      <h3>Career Strategy Intensive</h3>
-      <p>A focused coaching sprint to refine your career direction, optimize your professional brand, and accelerate advancement.</p>
-      <p><strong>Best for:</strong> Professionals preparing for promotion, transition, or leadership roles.</p>
-    </div>
-
-    <div class="card">
-      <h3>Executive BA Coaching</h3>
-      <p>High‑level coaching for senior professionals who need strategic clarity, leadership alignment, and advanced BA mastery.</p>
-      <p><strong>Best for:</strong> Leaders and senior analysts navigating complex initiatives.</p>
-    </div>
-
-  </div>
-</section>
+  <!-- 8 WEEK -->
   <section id="8week" class="section">
     <h2>8‑Week BA Coaching Program Schedule</h2>
 
     <div class="card-grid">
-      <div class="card"><h3>Week 1 — Foundations & Clarity</h3></div>
-      <div class="card"><h3>Week 2 — Requirements Mastery</h3></div>
-      <div class="card"><h3>Week 3 — Process Mapping</h3></div>
-      <div class="card"><h3>Week 4 — Stakeholder Engagement</h3></div>
-      <div class="card"><h3>Week 5 — Agile & Scrum BA</h3></div>
-      <div class="card"><h3>Week 6 — Technical BA Skills</h3></div>
-      <div class="card"><h3>Week 7 — Testing & Traceability</h3></div>
-      <div class="card"><h3>Week 8 — Career Strategy & Portfolio</h3></div>
+      <div class="card">
+        <h3>Week 1 — Foundations &amp; Clarity</h3>
+        <p>Program onboarding, BA competency assessment, clarity mapping, and goal alignment.</p>
+      </div>
+      <div class="card">
+        <h3>Week 2 — Requirements Mastery</h3>
+        <p>Business requirements vs. functional requirements, elicitation techniques, and requirement structuring.</p>
+      </div>
+      <div class="card">
+        <h3>Week 3 — Process Mapping</h3>
+        <p>Workflow analysis, BPMN fundamentals, swimlane diagrams, and process optimization.</p>
+      </div>
+      <div class="card">
+        <h3>Week 4 — Stakeholder Engagement</h3>
+        <p>Stakeholder analysis, communication strategies, conflict navigation, and influence techniques.</p>
+      </div>
+      <div class="card">
+        <h3>Week 5 — Agile &amp; Scrum BA</h3>
+        <p>User stories, acceptance criteria, backlog refinement, and Agile ceremonies.</p>
+      </div>
+      <div class="card">
+        <h3>Week 6 — Technical BA Skills</h3>
+        <p>API literacy, data mapping, systems thinking, and integration fundamentals.</p>
+      </div>
+      <div class="card">
+        <h3>Week 7 — Testing &amp; Traceability</h3>
+        <p>UAT planning, test case design, RTM development, and defect triage.</p>
+      </div>
+      <div class="card">
+        <h3>Week 8 — Career Strategy &amp; Portfolio</h3>
+        <p>Resume refinement, BA portfolio creation, interview coaching, and certification planning.</p>
+      </div>
     </div>
 
     <div class="progress-wrapper">
@@ -1547,6 +654,7 @@ ection class="wf-res-section" id="skills-tools">
     </div>
   </section>
 
+  <!-- CALENDAR -->
   <section id="calendar" class="section">
     <h2>Coaching Calendar</h2>
     <p>Your personalized coaching calendar helps you stay aligned, organized, and fully supported throughout your program.</p>
@@ -1556,7 +664,6 @@ ection class="wf-res-section" id="skills-tools">
         <h3><i class="fa-solid fa-calendar-days"></i> Upcoming Sessions</h3>
         <p>Track your scheduled coaching calls, assignments, and milestones.</p>
       </div>
-
       <div class="card">
         <h3><i class="fa-solid fa-clock"></i> Schedule Your Session</h3>
         <label>Select Date:</label>
@@ -1564,7 +671,6 @@ ection class="wf-res-section" id="skills-tools">
         <label>Select Time:</label>
         <input type="time" id="sessionTime" class="date-picker">
       </div>
-
       <div class="card">
         <h3><i class="fa-solid fa-check-circle"></i> Milestones</h3>
         <p>Review your growth checkpoints and completed achievements.</p>
@@ -1572,6 +678,7 @@ ection class="wf-res-section" id="skills-tools">
     </div>
   </section>
 
+  <!-- DOWNLOAD CENTER -->
   <section id="downloads" class="section">
     <h2>Download Center</h2>
 
@@ -1581,37 +688,31 @@ ection class="wf-res-section" id="skills-tools">
         <a class="download-link" href="files/BRD_Template.docx" download>Download Word</a>
         <a class="download-link" href="files/BRD_Template.pdf" download>Download PDF</a>
       </div>
-
       <div class="card">
         <h3>FRD Template</h3>
         <a class="download-link" href="files/FRD_Template.docx" download>Download Word</a>
         <a class="download-link" href="files/FRD_Template.pdf" download>Download PDF</a>
       </div>
-
       <div class="card">
         <h3>RACI Matrix</h3>
         <a class="download-link" href="files/RACI_Matrix.docx" download>Download Word</a>
         <a class="download-link" href="files/RACI_Matrix.pdf" download>Download PDF</a>
       </div>
-
       <div class="card">
         <h3>RTM Template</h3>
         <a class="download-link" href="files/RTM_Template.docx" download>Download Word</a>
         <a class="download-link" href="files/RTM_Template.pdf" download>Download PDF</a>
       </div>
-
       <div class="card">
         <h3>UAT Template</h3>
         <a class="download-link" href="files/UAT_Template.docx" download>Download Word</a>
         <a class="download-link" href="files/UAT_Template.pdf" download>Download PDF</a>
       </div>
-
       <div class="card">
         <h3>Workflow Guide</h3>
         <a class="download-link" href="files/Workflow_Guide.docx" download>Download Word</a>
         <a class="download-link" href="files/Workflow_Guide.pdf" download>Download PDF</a>
       </div>
-
       <div class="card">
         <h3>Advanced BA Templates</h3>
         <a class="download-link" href="files/API_Requirements.docx" download>API Requirements (Word)</a>
@@ -1642,240 +743,19 @@ ection class="wf-res-section" id="skills-tools">
     <a href="revisionlog.html">Revision Log</a>
     <a href="businessregistration.html">Business Registration</a>
     <a href="compliance.html">Website Compliance</a>
-    <a href="intake.html">Intake & Forms</a>
+    <a href="intake.html">Intake &amp; Forms</a>
     <a href="worksheets.html">Worksheets</a>
     <a href="sessionrecap.html">Session Recap</a>
   </div>
 </footer>
 
 <script>
-function updateProgress(week) {
-  const percent = (week / 8) * 100;
-  document.getElementById("progressFill").style.width = percent + "%";
-}
-updateProgress(1);
+  function updateProgress(week) {
+    const percent = (week / 8) * 100;
+    document.getElementById("progressFill").style.width = percent + "%";
+  }
+  updateProgress(1);
 </script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Analysis & EQ Coaching</title>
-    <style>
-        :root {
-            --primary-color: #0056b3;
-            --secondary-color: #e9ecef;
-            --text-color: #333;
-            --bg-color: #fafafa;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        header p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-            font-weight: 300;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        section {
-            margin-bottom: 4rem;
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-        .track-card {
-            background: var(--secondary-color);
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-        .track-card h3 {
-            margin-top: 0;
-            color: var(--primary-color);
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        .tag-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .tag {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        @media (max-width: 768px) {
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>Elevate Your Analysis & Leadership</h1>
-        <p>Bridging the gap between technical execution and human connection.</p>
-    </header>
-
-    <div class="container">
-        
-        <section id="about">
-            <h2>My Coaching Philosophy</h2>
-            <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                
-                <img src="profile.jpg" alt="Coach Profile Photo" style="width: 220px; height: 220px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-                
-                <div style="flex: 1; min-width: 300px;">
-                    <p>Delivering successful projects isn't just about documenting requirements; it's about understanding the people behind them. I believe that the best professionals possess a dual-threat capability: sharp technical acumen and deep emotional intelligence.</p>
-                    <p>Whether you are a Business Analyst looking to master Agile delivery and documentation, or a leader striving to build psychological safety and conduct high-impact 1-on-1s, my coaching provides the exact frameworks you need to turn data into decisions and conversations into growth.</p>
-                </div>
-                
-            </div>
-        </section>
-
-        <section id="services">
-            <h2>Coaching Tracks</h2>
-            <div class="grid-2">
-                
-                <div class="track-card">
-                    <h3>Track A: Business Analysis Mastery</h3>
-                    <p>Navigate the modern BA landscape with confidence, from foundational techniques to Agile ceremonies.</p>
-                    <ul>
-                        <li><strong>Agile Delivery:</strong> Master the art of writing testable User Stories, defining Acceptance Criteria, and leading Backlog Refinements.</li>
-                        <li><strong>Documentation Clarity:</strong> Understand exactly when and how to use a BRD (the "What"), an FRD (the "How"), and an SRS (the Blueprint).</li>
-                        <li><strong>Core Techniques:</strong> Apply the 10 essential BA tools, including Root Cause Analysis (5 Whys), Process Mapping, and MoSCoW Prioritization.</li>
-                        <li><strong>Stakeholder Alignment:</strong> Prevent bottlenecks by mastering the RACI Matrix (Responsible, Accountable, Consulted, Informed).</li>
-                    </ul>
-                </div>
-
-                <div class="track-card">
-                    <h3>Track B: Emotional Intelligence (EQ) & Leadership</h3>
-                    <p>Develop the soft skills necessary to lead with empathy, calm the busy mind, and foster genuine connection.</p>
-                    <ul>
-                        <li><strong>Empathetic Communication:</strong> Transition from "Listening to Fix" (rushing to solve) to "Listening to Connect" (creating safety and stillness).</li>
-                        <li><strong>Overcoming the Busy Mind:</strong> Identify and dismantle cognitive traps like "The Fortune Teller" and "The Judge" to build professional resilience.</li>
-                        <li><strong>The EQ Coach Approach:</strong> Structure powerful 1-on-1s using the 3-step Engage, Activate, and Reflect framework.</li>
-                        <li><strong>The Wheel of Coaching:</strong> Guide your team from defining their current state to exploring open questions and practicing actionable next steps.</li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="toolkit">
-            <h2>The Modern Toolkit</h2>
-            <p>The role of the Business Analyst has evolved past simple spreadsheets. In our sessions, we will focus on the modern skills required to thrive today.</p>
-            <div class="tag-container">
-                <span class="tag">Agile & Scrum</span>
-                <span class="tag">Jira & Confluence</span>
-                <span class="tag">Process Mapping (BPMN)</span>
-                <span class="tag">Data Analysis & SQL</span>
-                <span class="tag">Requirement Elicitation</span>
-                <span class="tag">Wireframing</span>
-                <span class="tag">Stakeholder Management</span>
-                <span class="tag">Active Listening</span>
-            </div>
-        </section>
-
-    </div>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Legal & Compliance – Wheeler Fortune</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body { margin:0; font-family:Arial, Helvetica, sans-serif; color:#333; }
-    .site-header { background:#7a1f3d; color:#fff; padding:16px; text-align:center; }
-    .container { width:90%; max-width:900px; margin:auto; padding:20px 0; }
-    .section { margin-top:30px; }
-    .section h2 { border-bottom:2px solid #ddd; padding-bottom:6px; }
-    .footer-brand { margin-top:40px; padding:16px; background:#f7f7f7; text-align:center; border-top:1px solid #ddd; }
-    a { color:#7a1f3d; text-decoration:none; }
-  </style>
-</head>
-<body>
-
-<header class="site-header">
-  <h1>Legal & Compliance</h1>
-  <p>Wheeler Fortune Business Support Consulting LLC</p>
-</header>
-
-<div class="container">
-
-  <section class="section">
-    <h2>Privacy Policy</h2>
-    <p>Wheeler Fortune Business Support Consulting LLC (“we,” “our,” “us”) is committed to protecting your privacy. This Privacy Policy explains how client information is collected, used, stored, and protected in alignment with the confidentiality and data handling standards defined in the Clarity & Alignment Coaching™ Operations Manual.</p>
-    <p>We collect information you voluntarily provide, including intake forms, coaching notes, and communication records. This information is used solely for coaching purposes, progress tracking, and administrative operations.</p>
-    <p>Your information is never sold, shared, or disclosed without your explicit consent, except where required by law.</p>
-  </section>
-
-  <section class="section">
-    <h2>Terms & Conditions</h2>
-    <p>By accessing this website or participating in coaching services, you agree to abide by these Terms & Conditions. Coaching services are provided for personal and professional development and do not constitute therapy, legal advice, or medical guidance.</p>
-    <p>You agree to provide accurate information, participate actively, and respect the boundaries of the coaching relationship. We reserve the right to modify these terms at any time.</p>
-  </section>
-
-  <section class="section">
-    <h2>Coaching Disclaimer</h2>
-    <p>Coaching is a collaborative process focused on clarity, alignment, and action. It is not intended to diagnose, treat, or cure any mental health or medical conditions. Clients remain responsible for their own decisions, actions, and outcomes.</p>
-    <p>We encourage clients to seek appropriate professional support when needed.</p>
-  </section>
-
-  <section class="section">
-    <h2>Cookie Notice</h2>
-    <p>This website may use cookies or similar technologies to enhance user experience, analyze site traffic, and support functionality. Cookies do not store personal information unless voluntarily provided.</p>
-    <p>You may disable cookies through your browser settings at any time.</p>
-  </section>
-
-</div>
-
-<footer class="footer-brand">
-  <p>© 2026 Wheeler Fortune Business Support Consulting LLC</p>
-  <p><a href="index.html">Back to Home</a></p>
-</footer>
 
 </body>
 </html>
