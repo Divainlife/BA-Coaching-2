@@ -4,6 +4,490 @@
   <meta charset="UTF-8" />
   <title>Wheeler Fortune BA Coaching Hub</title>
 
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --brand: #7a1f3d;
+      --muted: #f7f7f7;
+      --card-border: #e0e0e0;
+      --text-dark: #333;
+      --text-light: #555;
+      --radius: 14px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+      color: var(--text-dark);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* HEADER */
+    .site-header {
+      background: var(--brand);
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .site-header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    .tagline {
+      margin-top: 6px;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /* NAV */
+    .primary-nav {
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: bold;
+      padding: 10px;
+    }
+
+    /* RESPONSIVE HERO */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--brand);
+      color: #fff;
+      padding: 40px 20px;
+      border-radius: 0 0 var(--radius) var(--radius);
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+      padding-right: 20px;
+    }
+
+    .hero-text h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      margin-top: 10px;
+      opacity: 0.95;
+    }
+
+    .hero-photo {
+      flex: 1;
+      max-width: 380px;
+      border-radius: var(--radius);
+      object-fit: cover;
+    }
+
+    /* Tablet circular crop */
+    @media (max-width: 900px) {
+      .hero-photo {
+        max-width: 240px;
+        border-radius: 50%;
+      }
+    }
+
+    /* Mobile full portrait */
+    @media (max-width: 600px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-photo {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+      }
+    }
+
+    /* SECTIONS */
+    .section {
+      margin-top: 40px;
+    }
+
+    .section h2 {
+      font-size: 1.4rem;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 6px;
+    }
+
+    /* CARDS */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--card-border);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--brand);
+      font-size: 1.2rem;
+    }
+
+    /* DOWNLOAD CENTER */
+    .download-link {
+      display: block;
+      margin-top: 8px;
+      padding: 10px;
+      background: var(--brand);
+      color: #fff;
+      text-align: center;
+      border-radius: var(--radius);
+      text-decoration: none;
+    }
+
+    /* DATE PICKERS */
+    .date-picker {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    /* PROGRESS BAR */
+    .progress-wrapper {
+      margin-top: 20px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      background: #eee;
+      border-radius: 10px;
+      height: 20px;
+    }
+
+    .progress-fill {
+      height: 20px;
+      background: var(--brand);
+      border-radius: 10px;
+      transition: width .4s ease;
+    }
+
+    /* CLIENT PORTAL LOCK */
+    #portal { display: none; }
+
+    /* FOOTER */
+    .footer-brand {
+      margin-top: 60px;
+      padding: 20px;
+      background: var(--muted);
+      text-align: center;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <h1>Wheeler Fortune BA Coaching Hub</h1>
+  <p class="tagline">Clarity • Alignment • Professional Growth</p>
+</header>
+
+<nav class="primary-nav">
+  <ul class="nav-links">
+    <li><a href="#identity">Identity</a></li>
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#framework">Framework</a></li>
+    <li><a href="#align">ALIGN Method</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#8week">8‑Week Program</a></li>
+    <li><a href="#calendar">Calendar</a></li>
+    <li><a href="#portal">Client Portal</a></li>
+    <li><a href="#downloads">Download Center</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Business Analysis Coaching for High‑Achieving Professionals</h1>
+    <p>Empowering you to elevate your BA skills, strengthen your confidence, and accelerate your career trajectory.</p>
+  </div>
+
+  <img src="Images/github/Index.jpeg" class="hero-photo" alt="Catrina Wheeler Portrait">
+</section>
+
+<div class="container">
+
+<!-- IDENTITY -->
+<section id="identity" class="section">
+  <h2>Company Identity</h2>
+  <p>Wheeler Fortune Business Support Consulting LLC is a coaching and business support practice specializing in clarity, alignment, and structured personal and professional development.</p>
+  <p><strong>Location:</strong> Willingboro, NJ</p>
+  <p><strong>Primary Offering:</strong> Clarity & Alignment Coaching™</p>
+  <p><strong>Brand Promise:</strong> Structured clarity, aligned action, and measurable progress.</p>
+</section>
+
+<!-- MISSION -->
+<section id="mission" class="section">
+  <h2>Mission, Vision & Values</h2>
+  <p><strong>Mission:</strong> Empower individuals to gain clarity, align their actions with their goals, and build sustainable progress through structured coaching.</p>
+  <p><strong>Vision:</strong> To become a trusted coaching practice known for operational clarity, personal alignment, and transformative growth.</p>
+  <p><strong>Core Values:</strong> Clarity • Alignment • Integrity • Progress • Empowerment</p>
+</section>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy" class="section">
+  <h2>Coaching Philosophy</h2>
+  <p>Clarity & Alignment Coaching™ is grounded in ethical, structured, client‑centered support that empowers clients to make aligned decisions and achieve measurable progress.</p>
+</section>
+
+<!-- FRAMEWORK -->
+<section id="framework" class="section">
+  <h2>Clarity & Alignment Coaching™ Framework</h2>
+  <ul>
+    <li>Clarity discovery</li>
+    <li>Alignment mapping</li>
+    <li>Goal structuring</li>
+    <li>Action planning</li>
+    <li>Accountability</li>
+    <li>Progress evaluation</li>
+  </ul>
+</section>
+
+<!-- ALIGN METHOD -->
+<section id="align" class="section">
+  <h2>The ALIGN Method™</h2>
+  <ol>
+    <li>A — Assess current state</li>
+    <li>L — Locate misalignment</li>
+    <li>I — Identify goals</li>
+    <li>G — Generate action steps</li>
+    <li>N — Navigate progress</li>
+  </ol>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs" class="section">
+  <h2>Coaching Programs</h2>
+  <div class="card-grid">
+    <div class="card"><h3>Clarity & Alignment Coaching™</h3></div>
+    <div class="card"><h3>BA Skills Accelerator</h3></div>
+    <div class="card"><h3>Career Strategy Intensive</h3></div>
+    <div class="card"><h3>Executive BA Coaching</h3></div>
+  </div>
+</section>
+
+<!-- 8 WEEK -->
+<section id="8week" class="section">
+  <h2>8‑Week BA Coaching Program Schedule</h2>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <h3>Week 1 — Foundations & Clarity</h3>
+      <p>Program onboarding, BA competency assessment, clarity mapping, and goal alignment.</p>
+    </div>
+
+    <div class="card">
+      <h3>Week 2 — Requirements Mastery</h3>
+      <p>Business requirements vs. functional requirements, elicitation techniques, and requirement structuring.</p>
+    </div>
+
+    <div class="card">
+      <h3>Week 3 — Process Mapping</h3>
+      <p>Workflow analysis, BPMN fundamentals, swimlane diagrams, and process optimization.</p>
+    </div>
+
+    <div class="card">
+      <h3>Week 4 — Stakeholder Engagement</h3>
+      <p>Stakeholder analysis, communication strategies, conflict navigation, and influence techniques.</p>
+    </div>
+
+    <div class="card">
+      <h3>Week 5 — Agile & Scrum BA</h3>
+      <p>User stories, acceptance criteria, backlog refinement, and Agile ceremonies.</p>
+    </div>
+
+    <div class="card">
+      <h3>Week 6 — Technical BA Skills</h3>
+      <p>API literacy, data mapping, systems thinking, and integration fundamentals.</p>
+    </div>
+
+    <div class="card">
+      <h3>Week 7 — Testing & Traceability</h3>
+      <p>UAT planning, test case design, RTM development, and defect triage.</p>
+    </div>
+
+    <div class="card">
+      <h3>Week 8 — Career Strategy & Portfolio</h3>
+      <p>Resume refinement, BA portfolio creation, interview coaching, and certification planning.</p>
+    </div>
+
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="progress-wrapper">
+    <label>Program Progress</label>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </div>
+
+  <!-- Downloads -->
+  <div class="card">
+    <h3>Download 8‑Week Coaching Schedule</h3>
+    <a class="download-link" href="files/8WeekSchedule.pdf" download>Download PDF</a>
+    <a class="download-link" href="files/8WeekSchedule.docx" download>Download Word</a>
+  </div>
+</section>
+
+<!-- CALENDAR -->
+<section id="calendar" class="section">
+  <h2>Coaching Calendar</h2>
+  <p>Your personalized coaching calendar helps you stay aligned, organized, and fully supported throughout your program.</p>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <h3><i class="fa-solid fa-calendar-days"></i> Upcoming Sessions</h3>
+      <p>Track your scheduled coaching calls, assignments, and milestones.</p>
+    </div>
+
+    <div class="card">
+      <h3><i class="fa-solid fa-clock"></i> Schedule Your Session</h3>
+      <label>Select Date:</label>
+      <input type="date" id="sessionDate" class="date-picker">
+
+      <label>Select Time:</label>
+      <input type="time" id="sessionTime" class="date-picker">
+    </div>
+
+    <div class="card">
+      <h3><i class="fa-solid fa-check-circle"></i> Milestones</h3>
+      <p>Review your growth checkpoints and completed achievements.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CLIENT ACCESS -->
+<section id="clientAccess" class="section">
+  <h2>Client Access</h2>
+
+  <div class="card">
+    <h3>Enter Access Code</h3>
+    <input type="password" id="accessCode" placeholder="Enter your client code">
+    <button onclick="unlockClientPortal()">Unlock</button>
+    <p id="accessMessage"></p>
+  </div>
+</section>
+
+<!-- CLIENT PORTAL -->
+<section id="portal" class="section">
+  <h2>Client Portal</h2>
+  <div class="card-grid">
+    <div class="card"><h3>Session Notes</h3></div>
+    <div class="card"><h3>Download Center</h3></div>
+    <div class="card"><h3>Advanced Templates</h3></div>
+  </div>
+</section>
+
+<!-- DOWNLOAD CENTER -->
+<section id="downloads" class="section">
+  <h2>Download Center</h2>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <h3>BRD Template</h3>
+      <a class="download-link" href="files/BRD_Template.docx" download>Download Word</a>
+      <a class="download-link" href="files/BRD_Template.pdf" download>Download PDF</a>
+    </div>
+
+    <div class="card">
+      <h3>FRD Template</h3>
+      <a class="download-link" href="files/FRD_Template.docx" download>Download Word</a>
+      <a class="download-link" href="files/FRD_Template.pdf" download>Download PDF</a>
+    </div>
+
+    <div class="card">
+      <h3>RACI Matrix</h3>
+      <a class="download-link" href="files/RACI_Matrix.docx" download>Download Word</a>
+      <a class="download-link" href="files/RACI_Matrix.pdf" download>Download PDF</a>
+    </div>
+
+    <div class="card">
+      <h3>RTM Template</h3>
+      <a class="download-link" href="files/RTM_Template.docx" download>Download Word</a>
+      <a class="download-link" href="files/RTM_Template.pdf" download>Download PDF</a>
+    </div>
+
+    <div class="card">
+      <h3>UAT Template</h3>
+      <a class="download-link" href="files/UAT_Template.docx" download>Download Word</a>
+      <a class="download-link" href="files/UAT_Template.pdf" download>Download PDF</a>
+    </div>
+
+    <div class="card">
+      <h3>Workflow Guide</h3>
+      <a class="download-link" href="files/Workflow_Guide.docx" download>Download Word</a>
+      <a class="download-link" href="files/Workflow_Guide.pdf" download>Download PDF</a>
+    </div>
+
+    <div class="card">
+      <h3>Advanced BA Templates</h3>
+      <a class="download-link" href="files/API_Requirements.docx" download>API Requirements (Word)</a>
+      <a class="download-link" href="files/API_Requirements.pdf" download>API Requirements (PDF)</a>
+
+      <a class="download-link" href="files/Stakeholder_Register.docx" download>Stakeholder Register (Word)</a>
+      <a class="download-link" href="files/Stakeholder_Register.pdf" download>Stakeholder Register (PDF)</a>
+
+      <a class="download-link" href="files/Use_Case_Specs.docx" download>Use Case Specs (Word)</a>
+      <a class="download-link" href="files/Use_Case_Specs.pdf" download>Use Case Specs (PDF)</a>
+
+      <a class="download-link" href="files/Process_Maps.docx" download>Process Maps (Word)</a>
+      <<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wheeler Fortune BA Coaching Hub</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
