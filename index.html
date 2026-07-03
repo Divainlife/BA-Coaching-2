@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <title>Wheeler Fortune BA Coaching Hub</title>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     :root {
       --brand: #7a1f3d;
       --muted: #f7f7f7;
       --card-border: #e0e0e0;
       --text-dark: #333;
-      --text-light: #555;
       --radius: 14px;
     }
 
@@ -27,7 +28,6 @@
       margin: auto;
     }
 
-    /* HEADER */
     .site-header {
       background: var(--brand);
       color: #fff;
@@ -35,18 +35,9 @@
       text-align: center;
     }
 
-    .site-header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-    }
+    .site-header h1 { margin: 0; font-size: 1.8rem; }
+    .tagline { margin-top: 6px; font-size: 1rem; opacity: 0.9; }
 
-    .tagline {
-      margin-top: 6px;
-      font-size: 1rem;
-      opacity: 0.9;
-    }
-
-    /* NAV */
     .primary-nav {
       background: #fff;
       border-bottom: 1px solid #ddd;
@@ -69,7 +60,6 @@
       padding: 10px;
     }
 
-    /* RESPONSIVE HERO */
     .hero {
       display: flex;
       flex-wrap: wrap;
@@ -81,22 +71,9 @@
       border-radius: 0 0 var(--radius) var(--radius);
     }
 
-    .hero-text {
-      flex: 1;
-      min-width: 280px;
-      padding-right: 20px;
-    }
-
-    .hero-text h1 {
-      font-size: 2rem;
-      margin: 0;
-    }
-
-    .hero-text p {
-      font-size: 1.1rem;
-      margin-top: 10px;
-      opacity: 0.95;
-    }
+    .hero-text { flex: 1; min-width: 280px; padding-right: 20px; }
+    .hero-text h1 { font-size: 2rem; margin: 0; }
+    .hero-text p { font-size: 1.1rem; margin-top: 10px; opacity: 0.95; }
 
     .hero-photo {
       flex: 1;
@@ -105,39 +82,22 @@
       object-fit: cover;
     }
 
-    /* Tablet circular crop */
     @media (max-width: 900px) {
-      .hero-photo {
-        max-width: 240px;
-        border-radius: 50%;
-      }
+      .hero-photo { max-width: 240px; border-radius: 50%; }
     }
 
-    /* Mobile full portrait */
     @media (max-width: 600px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero-photo {
-        width: 100%;
-        max-width: 100%;
-        border-radius: 0;
-      }
+      .hero { flex-direction: column; text-align: center; }
+      .hero-photo { width: 100%; max-width: 100%; border-radius: 0; }
     }
 
-    /* SECTIONS */
-    .section {
-      margin-top: 40px;
-    }
-
+    .section { margin-top: 40px; }
     .section h2 {
       font-size: 1.4rem;
       border-bottom: 2px solid #ddd;
       padding-bottom: 6px;
     }
 
-    /* CARDS */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -159,13 +119,8 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
 
-    .card h3 {
-      margin-top: 0;
-      color: var(--brand);
-      font-size: 1.2rem;
-    }
+    .card h3 { margin-top: 0; color: var(--brand); font-size: 1.2rem; }
 
-    /* DOWNLOAD CENTER */
     .download-link {
       display: block;
       margin-top: 8px;
@@ -177,13 +132,41 @@
       text-decoration: none;
     }
 
-    /* FOOTER */
+    .date-picker {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .progress-wrapper { margin-top: 20px; }
+    .progress-bar {
+      width: 100%;
+      background: #eee;
+      border-radius: 10px;
+      height: 20px;
+    }
+    .progress-fill {
+      height: 20px;
+      background: var(--brand);
+      border-radius: 10px;
+      transition: width .4s ease;
+    }
+
     .footer-brand {
       margin-top: 60px;
       padding: 20px;
       background: var(--muted);
       text-align: center;
       border-top: 1px solid #ddd;
+    }
+
+    .footer-links a {
+      margin: 0 8px;
+      color: var(--text-dark);
+      text-decoration: none;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -197,12 +180,15 @@
 
 <nav class="primary-nav">
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
+    <li><a href="#identity">Identity</a></li>
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#framework">Framework</a></li>
+    <li><a href="#align">ALIGN Method</a></li>
     <li><a href="#programs">Programs</a></li>
-    <li><a href="#framework">ALIGN Framework</a></li>
-    <li><a href="#portal">Client Portal</a></li>
+    <li><a href="#8week">8‑Week Program</a></li>
+    <li><a href="#calendar">Calendar</a></li>
+    <li><a href="portal.html">Client Portal</a></li>
     <li><a href="#downloads">Download Center</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -217,13 +203,49 @@
 
 <div class="container">
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <h2>About Wheeler Fortune Coaching</h2>
-    <p>Wheeler Fortune Coaching is built on the belief that clarity and alignment are the foundation of professional growth.</p>
+  <section id="identity" class="section">
+    <h2>Company Identity</h2>
+    <p>Wheeler Fortune Business Support Consulting LLC is a coaching and business support practice specializing in clarity, alignment, and structured personal and professional development.</p>
+    <p><strong>Location:</strong> Willingboro, NJ</p>
+    <p><strong>Primary Offering:</strong> Clarity & Alignment Coaching™</p>
+    <p><strong>Brand Promise:</strong> Structured clarity, aligned action, and measurable progress.</p>
   </section>
 
-  <!-- PROGRAMS -->
+  <section id="mission" class="section">
+    <h2>Mission, Vision & Values</h2>
+    <p><strong>Mission:</strong> Empower individuals to gain clarity, align their actions with their goals, and build sustainable progress through structured coaching.</p>
+    <p><strong>Vision:</strong> To become a trusted coaching practice known for operational clarity, personal alignment, and transformative growth.</p>
+    <p><strong>Core Values:</strong> Clarity • Alignment • Integrity • Progress • Empowerment</p>
+  </section>
+
+  <section id="philosophy" class="section">
+    <h2>Coaching Philosophy</h2>
+    <p>Clarity & Alignment Coaching™ is grounded in ethical, structured, client‑centered support that empowers clients to make aligned decisions and achieve measurable progress.</p>
+  </section>
+
+  <section id="framework" class="section">
+    <h2>Clarity & Alignment Coaching™ Framework</h2>
+    <ul>
+      <li>Clarity discovery</li>
+      <li>Alignment mapping</li>
+      <li>Goal structuring</li>
+      <li>Action planning</li>
+      <li>Accountability</li>
+      <li>Progress evaluation</li>
+    </ul>
+  </section>
+
+  <section id="align" class="section">
+    <h2>The ALIGN Method™</h2>
+    <ol>
+      <li>A — Assess current state</li>
+      <li>L — Locate misalignment</li>
+      <li>I — Identify goals</li>
+      <li>G — Generate action steps</li>
+      <li>N — Navigate progress</li>
+    </ol>
+  </section>
+
   <section id="programs" class="section">
     <h2>Coaching Programs</h2>
     <div class="card-grid">
@@ -234,206 +256,110 @@
     </div>
   </section>
 
-  <!-- FRAMEWORK -->
-  <section id="framework" class="section">
-    <h2>The ALIGN Framework</h2>
+  <section id="8week" class="section">
+    <h2>8‑Week BA Coaching Program Schedule</h2>
+
     <div class="card-grid">
-      <div class="card"><h3>A — Awareness</h3></div>
-      <div class="card"><h3>L — Learning</h3></div>
-      <div class="card"><h3>I — Implementation</h3></div>
-      <div class="card"><h3>G — Growth</h3></div>
-      <div class="card"><h3>N — Navigation</h3></div>
+      <div class="card"><h3>Week 1 — Foundations & Clarity</h3></div>
+      <div class="card"><h3>Week 2 — Requirements Mastery</h3></div>
+      <div class="card"><h3>Week 3 — Process Mapping</h3></div>
+      <div class="card"><h3>Week 4 — Stakeholder Engagement</h3></div>
+      <div class="card"><h3>Week 5 — Agile & Scrum BA</h3></div>
+      <div class="card"><h3>Week 6 — Technical BA Skills</h3></div>
+      <div class="card"><h3>Week 7 — Testing & Traceability</h3></div>
+      <div class="card"><h3>Week 8 — Career Strategy & Portfolio</h3></div>
+    </div>
+
+    <div class="progress-wrapper">
+      <label>Program Progress</label>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Download 8‑Week Coaching Schedule</h3>
+      <a class="download-link" href="files/8WeekSchedule.pdf" download>Download PDF</a>
+      <a class="download-link" href="files/8WeekSchedule.docx" download>Download Word</a>
     </div>
   </section>
 
-  <!-- CLIENT PORTAL -->
-  <section id="portal" class="section">
-    <h2>Client Portal</h2>
+  <section id="calendar" class="section">
+    <h2>Coaching Calendar</h2>
+    <p>Your personalized coaching calendar helps you stay aligned, organized, and fully supported throughout your program.</p>
+
     <div class="card-grid">
-      <div class="card"><h3>Session Notes</h3></div>
-      <div class="card"><h3>Download Center</h3></div>
-      <div class="card"><h3>Advanced Templates</h3></div>
+      <div class="card">
+        <h3><i class="fa-solid fa-calendar-days"></i> Upcoming Sessions</h3>
+        <p>Track your scheduled coaching calls, assignments, and milestones.</p>
+      </div>
+
+      <div class="card">
+        <h3><i class="fa-solid fa-clock"></i> Schedule Your Session</h3>
+        <label>Select Date:</label>
+        <input type="date" id="sessionDate" class="date-picker">
+        <label>Select Time:</label>
+        <input type="time" id="sessionTime" class="date-picker">
+      </div>
+
+      <div class="card">
+        <h3><i class="fa-solid fa-check-circle"></i> Milestones</h3>
+        <p>Review your growth checkpoints and completed achievements.</p>
+      </div>
     </div>
   </section>
 
-  <!-- DOWNLOAD CENTER -->
   <section id="downloads" class="section">
     <h2>Download Center</h2>
 
     <div class="card-grid">
-
       <div class="card">
         <h3>BRD Template</h3>
-        <a class="download-link" href="#">Download Word</a>
-        <a class="download-link" href="#">Download PDF</a>
+        <a class="download-link" href="files/BRD_Template.docx" download>Download Word</a>
+        <a class="download-link" href="files/BRD_Template.pdf" download>Download PDF</a>
       </div>
 
       <div class="card">
         <h3>FRD Template</h3>
-        <a class="download-link" href="#">Download Word</a>
-        <a class="download-link" href="#">Download PDF</a>
+        <a class="download-link" href="files/FRD_Template.docx" download>Download Word</a>
+        <a class="download-link" href="files/FRD_Template.pdf" download>Download PDF</a>
       </div>
 
       <div class="card">
         <h3>RACI Matrix</h3>
-        <a class="download-link" href="#">Download Word</a>
-        <a class="download-link" href="#">Download PDF</a>
+        <a class="download-link" href="files/RACI_Matrix.docx" download>Download Word</a>
+        <a class="download-link" href="files/RACI_Matrix.pdf" download>Download PDF</a>
       </div>
 
       <div class="card">
         <h3>RTM Template</h3>
-        <a class="download-link" href="#">Download Word</a>
-        <a class="download-link" href="#">Download PDF</a>
+        <a class="download-link" href="files/RTM_Template.docx" download>Download Word</a>
+        <a class="download-link" href="files/RTM_Template.pdf" download>Download PDF</a>
       </div>
 
       <div class="card">
         <h3>UAT Template</h3>
-        <a class="download-link" href="#">Download Word</a>
-        <a class="download-link" href="#">Download PDF</a>
+        <a class="download-link" href="files/UAT_Template.docx" download>Download Word</a>
+        <a class="download-link" href="files/UAT_Template.pdf" download>Download PDF</a>
       </div>
 
       <div class="card">
         <h3>Workflow Guide</h3>
-        <a class="download-link" href="#">Download Word</a>
-        <a class="download-link" href="#">Download PDF</a>
+        <a class="download-link" href="files/Workflow_Guide.docx" download>Download Word</a>
+        <a class="download-link" href="files/Workflow_Guide.pdf" download>Download PDF</a>
       </div>
 
       <div class="card">
         <h3>Advanced BA Templates</h3>
-        <a class="download-link" href="#">API Requirements</a>
-        <a class="download-link" href="#">Stakeholder Register</a>
-        <a class="download-link" href="#">Use Case Specs</a>
-        <a class="download-link" href="#">Process Maps</a>
+        <a class="download-link" href="files/API_Requirements.docx" download>API Requirements (Word)</a>
+        <a class="download-link" href="files/API_Requirements.pdf" download>API Requirements (PDF)</a>
+        <a class="download-link" href="files/Stakeholder_Register.docx" download>Stakeholder Register (Word)</a>
+        <a class="download-link" href="files/Stakeholder_Register.pdf" download>Stakeholder Register (PDF)</a>
+        <a class="download-link" href="files/Use_Case_Specs.docx" download>Use Case Specs (Word)</a>
+        <a class="download-link" href="files/Use_Case_Specs.pdf" download>Use Case Specs (PDF)</a>
+        <a class="download-link" href="files/Process_Maps.docx" download>Process Maps (Word)</a>
+        <a class="download-link" href="files/Process_Maps.pdf" download>Process Maps (PDF)</a>
       </div>
-
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>Email: <strong>Wheeler_Fortune@outlook.com</strong></p>
-  </section>
-
-</div>
-
-<footer class="footer-brand">
-  <p>© 2026 Wheeler Fortune Business Support Consulting LLC</p>
-</footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Client Portal – Wheeler Fortune</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body { margin:0; font-family:Arial, Helvetica, sans-serif; color:#333; }
-    .site-header { background:#7a1f3d; color:#fff; padding:16px; text-align:center; }
-    .container { width:90%; max-width:1000px; margin:auto; padding:20px 0; }
-    .section { margin-top:30px; }
-    .section h2 { border-bottom:2px solid #ddd; padding-bottom:6px; }
-    .card-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:16px;
-      margin-top:20px;
-    }
-    .card {
-      background:#fff;
-      border:1px solid #e0e0e0;
-      padding:20px;
-      border-radius:12px;
-      box-shadow:0 2px 6px rgba(0,0,0,0.05);
-    }
-    .card h3 { margin-top:0; color:#7a1f3d; }
-    .download-link {
-      display:block;
-      margin-top:8px;
-      padding:10px;
-      background:#7a1f3d;
-      color:#fff;
-      text-align:center;
-      border-radius:10px;
-      text-decoration:none;
-    }
-    .footer-brand { margin-top:40px; padding:16px; background:#f7f7f7; text-align:center; border-top:1px solid #ddd; }
-  </style>
-</head>
-<body>
-
-<header class="site-header">
-  <h1>Client Portal</h1>
-  <p>Wheeler Fortune Business Support Consulting LLC – Clarity & Alignment Coaching™</p>
-</header>
-
-<div class="container">
-
-  <section class="section">
-    <h2>Session Notes</h2>
-    <p>Access your coaching session notes, action items, and alignment insights.</p>
-  </section>
-
-  <section class="section">
-    <h2>Worksheets & Templates</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>Clarity Worksheet</h3>
-        <a class="download-link" href="files/Clarity_Worksheet.docx" download>Download Word</a>
-        <a class="download-link" href="files/Clarity_Worksheet.pdf" download>Download PDF</a>
-      </div>
-      <div class="card">
-        <h3>Alignment Map</h3>
-        <a class="download-link" href="files/Alignment_Map.docx" download>Download Word</a>
-        <a class="download-link" href="files/Alignment_Map.pdf" download>Download PDF</a>
-      </div>
-      <div class="card">
-        <h3>Decision Log</h3>
-        <a class="download-link" href="files/Decision_Log.docx" download>Download Word</a>
-        <a class="download-link" href="files/Decision_Log.pdf" download>Download PDF</a>
-      </div>
-      <div class="card">
-        <h3>Weekly Progress Report</h3>
-        <a class="download-link" href="files/Weekly_Progress_Report.docx" download>Download Word</a>
-        <a class="download-link" href="files/Weekly_Progress_Report.pdf" download>Download PDF</a>
-      </div>
-      <div class="card">
-        <h3>Weekly Operations Checklist</h3>
-        <a class="download-link" href="files/Weekly_Operations_Checklist.docx" download>Download Word</a>
-        <a class="download-link" href="files/Weekly_Operations_Checklist.pdf" download>Download PDF</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Intake & Onboarding Forms</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>Client Intake Form</h3>
-        <a class="download-link" href="files/Client_Intake_Form.docx" download>Download Word</a>
-        <a class="download-link" href="files/Client_Intake_Form.pdf" download>Download PDF</a>
-      </div>
-      <div class="card">
-        <h3>Discovery Call Form</h3>
-        <a class="download-link" href="files/Discovery_Call_Form.docx" download>Download Word</a>
-        <a class="download-link" href="files/Discovery_Call_Form.pdf" download>Download PDF</a>
-      </div>
-      <div class="card">
-        <h3>Goal‑Setting Worksheet</h3>
-        <a class="download-link" href="files/Goal_Setting_Worksheet.docx" download>Download Word</a>
-        <a class="download-link" href="files/Goal_Setting_Worksheet.pdf" download>Download PDF</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Session Recap Template</h2>
-    <div class="card">
-      <h3>Download Session Recap Template</h3>
-      <a class="download-link" href="files/Session_Recap_Template.docx" download>Download Word</a>
-      <a class="download-link" href="files/Session_Recap_Template.pdf" download>Download PDF</a>
     </div>
   </section>
 
@@ -441,12 +367,34 @@
 
 <footer class="footer-brand">
   <p>© 2026 Wheeler Fortune Business Support Consulting LLC</p>
-  <p><a href="index.html">Back to Home</a></p>
+  <div class="footer-links">
+    <a href="legal.html">Legal</a>
+    <a href="agreement.html">Client Agreement</a>
+    <a href="policies.html">Policies</a>
+    <a href="confidentiality.html">Confidentiality</a>
+    <a href="ethics.html">Code of Ethics</a>
+    <a href="scope.html">Scope of Practice</a>
+    <a href="branding.html">Branding</a>
+    <a href="appendices.html">Appendices</a>
+    <a href="revisionlog.html">Revision Log</a>
+    <a href="businessregistration.html">Business Registration</a>
+    <a href="compliance.html">Website Compliance</a>
+    <a href="intake.html">Intake & Forms</a>
+    <a href="worksheets.html">Worksheets</a>
+    <a href="sessionrecap.html">Session Recap</a>
+  </div>
 </footer>
 
+<script>
+function updateProgress(week) {
+  const percent = (week / 8) * 100;
+  document.getElementById("progressFill").style.width = percent + "%";
+}
+updateProgress(1);
+</script>
+
 </body>
-</html>
-<!DOCTYPE html>
+</html><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -459,6 +407,7 @@
     .section { margin-top:30px; }
     .section h2 { border-bottom:2px solid #ddd; padding-bottom:6px; }
     .footer-brand { margin-top:40px; padding:16px; background:#f7f7f7; text-align:center; border-top:1px solid #ddd; }
+    a { color:#7a1f3d; text-decoration:none; }
   </style>
 </head>
 <body>
@@ -472,130 +421,27 @@
 
   <section class="section">
     <h2>Privacy Policy</h2>
-    <p>This policy explains how client information is collected, used, and protected in alignment with the confidentiality and data handling standards defined in the Clarity & Alignment Coaching™ Operations Manual.</p>
+    <p>Wheeler Fortune Business Support Consulting LLC (“we,” “our,” “us”) is committed to protecting your privacy. This Privacy Policy explains how client information is collected, used, stored, and protected in alignment with the confidentiality and data handling standards defined in the Clarity & Alignment Coaching™ Operations Manual.</p>
+    <p>We collect information you voluntarily provide, including intake forms, coaching notes, and communication records. This information is used solely for coaching purposes, progress tracking, and administrative operations.</p>
+    <p>Your information is never sold, shared, or disclosed without your explicit consent, except where required by law.</p>
   </section>
 
   <section class="section">
     <h2>Terms & Conditions</h2>
-    <p>These terms govern the use of Wheeler Fortune coaching services, including expectations, responsibilities, and limitations of liability.</p>
+    <p>By accessing this website or participating in coaching services, you agree to abide by these Terms & Conditions. Coaching services are provided for personal and professional development and do not constitute therapy, legal advice, or medical guidance.</p>
+    <p>You agree to provide accurate information, participate actively, and respect the boundaries of the coaching relationship. We reserve the right to modify these terms at any time.</p>
   </section>
 
   <section class="section">
     <h2>Coaching Disclaimer</h2>
-    <p>Coaching is not therapy, medical treatment, or legal advice. Clients remain responsible for their own decisions and outcomes.</p>
+    <p>Coaching is a collaborative process focused on clarity, alignment, and action. It is not intended to diagnose, treat, or cure any mental health or medical conditions. Clients remain responsible for their own decisions, actions, and outcomes.</p>
+    <p>We encourage clients to seek appropriate professional support when needed.</p>
   </section>
 
   <section class="section">
     <h2>Cookie Notice</h2>
-    <p>If cookies or tracking technologies are used, clients are informed of their purpose and given options to manage preferences.</p>
-  </section>
-
-</div>
-
-<footer class="footer-brand">
-  <p>© 2026 Wheeler Fortune Business Support Consulting LLC</p>
-  <p><a href="index.html">Back to Home</a></p>
-</footer>
-
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Client Agreement – Wheeler Fortune</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body { margin:0; font-family:Arial, Helvetica, sans-serif; color:#333; }
-    .site-header { background:#7a1f3d; color:#fff; padding:16px; text-align:center; }
-    .container { width:90%; max-width:900px; margin:auto; padding:20px 0; }
-    .section { margin-top:30px; }
-    .section h2 { border-bottom:2px solid #ddd; padding-bottom:6px; }
-    .footer-brand { margin-top:40px; padding:16px; background:#f7f7f7; text-align:center; border-top:1px solid #ddd; }
-  </style>
-</head>
-<body>
-
-<header class="site-header">
-  <h1>Client Coaching Agreement</h1>
-  <p>Wheeler Fortune Business Support Consulting LLC</p>
-</header>
-
-<div class="container">
-
-  <section class="section">
-    <h2>Coaching Relationship</h2>
-    <p>The coaching relationship is collaborative, client‑centered, and focused on clarity, alignment, and measurable progress.</p>
-  </section>
-
-  <section class="section">
-    <h2>Payment Terms</h2>
-    <p>Payment is due prior to scheduled sessions, in accordance with the payment and billing policies defined in the Operations Manual.</p>
-  </section>
-
-  <section class="section">
-    <h2>Confidentiality</h2>
-    <p>Client information is treated as confidential and handled according to the confidentiality and data handling standards.</p>
-  </section>
-
-  <section class="section">
-    <h2>Boundaries & Scope</h2>
-    <p>Coaching is not therapy, legal advice, or medical guidance. Clients agree to seek appropriate professional support when needed.</p>
-  </section>
-
-</div>
-
-<footer class="footer-brand">
-  <p>© 2026 Wheeler Fortune Business Support Consulting LLC</p>
-  <p><a href="index.html">Back to Home</a></p>
-</footer>
-
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Payment & Policies – Wheeler Fortune</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body { margin:0; font-family:Arial, Helvetica, sans-serif; color:#333; }
-    .site-header { background:#7a1f3d; color:#fff; padding:16px; text-align:center; }
-    .container { width:90%; max-width:900px; margin:auto; padding:20px 0; }
-    .section { margin-top:30px; }
-    .section h2 { border-bottom:2px solid #ddd; padding-bottom:6px; }
-    .footer-brand { margin-top:40px; padding:16px; background:#f7f7f7; text-align:center; border-top:1px solid #ddd; }
-  </style>
-</head>
-<body>
-
-<header class="site-header">
-  <h1>Payment, Billing & Cancellation Policies</h1>
-  <p>Wheeler Fortune Business Support Consulting LLC</p>
-</header>
-
-<div class="container">
-
-  <section class="section">
-    <h2>Payment Policy</h2>
-    <p>Payment is required before coaching sessions begin, in alignment with the program structure and agreed terms.</p>
-  </section>
-
-  <section class="section">
-    <h2>Billing Policy</h2>
-    <p>Invoices, receipts, and payment confirmations are provided for all coaching packages and sessions.</p>
-  </section>
-
-  <section class="section">
-    <h2>Cancellation Policy</h2>
-    <p>Clients are asked to provide at least 24 hours’ notice to cancel or reschedule a session.</p>
-  </section>
-
-  <section class="section">
-    <h2>Refund Policy</h2>
-    <p>Completed sessions are non‑refundable. Package refunds, if applicable, follow the terms outlined in the coaching agreement.</p>
+    <p>This website may use cookies or similar technologies to enhance user experience, analyze site traffic, and support functionality. Cookies do not store personal information unless voluntarily provided.</p>
+    <p>You may disable cookies through your browser settings at any time.</p>
   </section>
 
 </div>
