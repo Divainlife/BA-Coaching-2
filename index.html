@@ -69,24 +69,61 @@
       padding: 10px;
     }
 
-    /* HERO */
+    /* RESPONSIVE HERO */
     .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
       background: var(--brand);
       color: #fff;
-      padding: 60px 20px;
-      text-align: center;
+      padding: 40px 20px;
       border-radius: 0 0 var(--radius) var(--radius);
     }
 
-    .hero h1 {
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+      padding-right: 20px;
+    }
+
+    .hero-text h1 {
       font-size: 2rem;
       margin: 0;
     }
 
-    .hero p {
+    .hero-text p {
       font-size: 1.1rem;
       margin-top: 10px;
       opacity: 0.95;
+    }
+
+    .hero-photo {
+      flex: 1;
+      max-width: 380px;
+      border-radius: var(--radius);
+      object-fit: cover;
+    }
+
+    /* Tablet circular crop */
+    @media (max-width: 900px) {
+      .hero-photo {
+        max-width: 240px;
+        border-radius: 50%;
+      }
+    }
+
+    /* Mobile full portrait */
+    @media (max-width: 600px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-photo {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+      }
     }
 
     /* SECTIONS */
@@ -128,6 +165,18 @@
       font-size: 1.2rem;
     }
 
+    /* DOWNLOAD CENTER */
+    .download-link {
+      display: block;
+      margin-top: 8px;
+      padding: 10px;
+      background: var(--brand);
+      color: #fff;
+      text-align: center;
+      border-radius: var(--radius);
+      text-decoration: none;
+    }
+
     /* FOOTER */
     .footer-brand {
       margin-top: 60px;
@@ -135,39 +184,6 @@
       background: var(--muted);
       text-align: center;
       border-top: 1px solid #ddd;
-    }
-
-    /* CLIENT PORTAL */
-    .login-box {
-      max-width: 400px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-    }
-
-    .login-box input {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: var(--radius);
-      border: 1px solid #ccc;
-    }
-
-    .login-box button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 16px;
-      background: var(--brand);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius);
-      cursor: pointer;
-    }
-
-    .login-box button:hover {
-      opacity: 0.9;
     }
   </style>
 </head>
@@ -184,179 +200,112 @@
     <li><a href="#about">About</a></li>
     <li><a href="#programs">Programs</a></li>
     <li><a href="#framework">ALIGN Framework</a></li>
-    <li><a href="#diagrams">Visual Diagrams</a></li>
     <li><a href="#portal">Client Portal</a></li>
-    <li><a href="#resources">Resources</a></li>
-    <li><a href="#structure">Site Structure</a></li>
+    <li><a href="#downloads">Download Center</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <section class="hero">
-  <h1>Business Analysis Coaching for High‑Achieving Professionals</h1>
-  <p>Empowering you to elevate your BA skills, strengthen your confidence, and accelerate your career trajectory.</p>
+  <div class="hero-text">
+    <h1>Business Analysis Coaching for High‑Achieving Professionals</h1>
+    <p>Empowering you to elevate your BA skills, strengthen your confidence, and accelerate your career trajectory.</p>
+  </div>
+
+  <img src="Images/github/Index.jpeg" class="hero-photo" alt="Catrina Wheeler Portrait">
 </section>
 
 <div class="container">
 
-  <!-- ABOUT PAGE -->
+  <!-- ABOUT -->
   <section id="about" class="section">
     <h2>About Wheeler Fortune Coaching</h2>
-    <p>
-      Wheeler Fortune Coaching is built on the belief that clarity and alignment are the foundation of professional growth.
-      With over a decade of experience supporting corporate leaders, analysts, and project teams, Wheeler Fortune brings
-      a structured, empowering approach to Business Analysis coaching.
-    </p>
-
-    <div class="card-grid">
-      <div class="card">
-        <h3>Our Mission</h3>
-        <p>To help professionals gain clarity, build confidence, and navigate their careers with purpose.</p>
-      </div>
-
-      <div class="card">
-        <h3>Our Philosophy</h3>
-        <p>We believe in structured learning, intentional growth, and practical tools that create real transformation.</p>
-      </div>
-
-      <div class="card">
-        <h3>Our Approach</h3>
-        <p>The ALIGN Framework guides every coaching engagement, ensuring consistency, clarity, and measurable progress.</p>
-      </div>
-    </div>
+    <p>Wheeler Fortune Coaching is built on the belief that clarity and alignment are the foundation of professional growth.</p>
   </section>
 
-  <!-- PROGRAMS PAGE -->
+  <!-- PROGRAMS -->
   <section id="programs" class="section">
     <h2>Coaching Programs</h2>
-    <p>Explore structured coaching programs designed to elevate your Business Analysis career.</p>
-
     <div class="card-grid">
-      <div class="card">
-        <h3>Clarity & Alignment Coaching™</h3>
-        <p>Perfect for professionals seeking direction, confidence, and a clear roadmap for their next career milestone.</p>
-      </div>
-
-      <div class="card">
-        <h3>BA Skills Accelerator</h3>
-        <p>Hands‑on skill development covering requirements, workflows, documentation, and stakeholder engagement.</p>
-      </div>
-
-      <div class="card">
-        <h3>Career Strategy Intensive</h3>
-        <p>Focused coaching for résumé refinement, interview mastery, and professional branding.</p>
-      </div>
-
-      <div class="card">
-        <h3>Executive BA Coaching</h3>
-        <p>Advanced coaching for senior analysts and leaders navigating complex initiatives and organizational influence.</p>
-      </div>
+      <div class="card"><h3>Clarity & Alignment Coaching™</h3></div>
+      <div class="card"><h3>BA Skills Accelerator</h3></div>
+      <div class="card"><h3>Career Strategy Intensive</h3></div>
+      <div class="card"><h3>Executive BA Coaching</h3></div>
     </div>
   </section>
 
-  <!-- ALIGN FRAMEWORK -->
+  <!-- FRAMEWORK -->
   <section id="framework" class="section">
     <h2>The ALIGN Framework</h2>
-    <p>The Wheeler Fortune signature coaching model guiding clients through Awareness, Learning, Implementation, Growth, and Navigation.</p>
-
     <div class="card-grid">
-      <div class="card"><h3>A — Awareness</h3><p>Gain clarity on your current state.</p></div>
-      <div class="card"><h3>L — Learning</h3><p>Build BA knowledge and tools.</p></div>
-      <div class="card"><h3>I — Implementation</h3><p>Apply new skills through guided exercises.</p></div>
-      <div class="card"><h3>G — Growth</h3><p>Strengthen your confidence and impact.</p></div>
-      <div class="card"><h3>N — Navigation</h3><p>Plan your next steps strategically.</p></div>
-    </div>
-  </section>
-
-  <!-- VISUAL DIAGRAMS -->
-  <section id="diagrams" class="section">
-    <h2>Visual Coaching Diagrams</h2>
-    <p>Brand‑aligned visuals that illustrate the ALIGN coaching model.</p>
-
-    <div class="card-grid">
-      <div class="card">
-        <h3>ALIGN Model Diagram</h3>
-        <p>A circular or linear diagram showing the five phases of ALIGN.</p>
-      </div>
-      <div class="card">
-        <h3>Client Journey Map</h3>
-        <p>Visualizing the transformation from onboarding to mastery.</p>
-      </div>
-      <div class="card">
-        <h3>BA Skills Roadmap</h3>
-        <p>Milestones for junior, mid‑level, and senior BA progression.</p>
-      </div>
+      <div class="card"><h3>A — Awareness</h3></div>
+      <div class="card"><h3>L — Learning</h3></div>
+      <div class="card"><h3>I — Implementation</h3></div>
+      <div class="card"><h3>G — Growth</h3></div>
+      <div class="card"><h3>N — Navigation</h3></div>
     </div>
   </section>
 
   <!-- CLIENT PORTAL -->
   <section id="portal" class="section">
     <h2>Client Portal</h2>
-    <p>Secure access to your coaching materials, session notes, and downloadable templates.</p>
-
-    <div class="login-box">
-      <h3>Client Login</h3>
-      <input type="text" placeholder="Email Address" />
-      <input type="password" placeholder="Password" />
-      <button>Login</button>
-    </div>
-
     <div class="card-grid">
-      <div class="card">
-        <h3>Session Notes</h3>
-        <p>Access your personalized coaching notes and action plans.</p>
-      </div>
-      <div class="card">
-        <h3>Downloadable Templates</h3>
-        <p>BRD, FRD, RACI, RTM, UAT, and workflow guides.</p>
-      </div>
-      <div class="card">
-        <h3>Progress Tracking</h3>
-        <p>Monitor your growth through the ALIGN model.</p>
-      </div>
+      <div class="card"><h3>Session Notes</h3></div>
+      <div class="card"><h3>Download Center</h3></div>
+      <div class="card"><h3>Advanced Templates</h3></div>
     </div>
   </section>
 
-  <!-- RESOURCES -->
-  <section id="resources" class="section">
-    <h2>Coaching Resources</h2>
-    <div class="card-grid">
-      <div class="card"><h3>BA Templates</h3><p>Requirements docs, intake forms, workflow guides.</p></div>
-      <div class="card"><h3>Career Tools</h3><p>Résumé frameworks, portfolio samples.</p></div>
-      <div class="card"><h3>Learning Library</h3><p>Curated BA articles and exercises.</p></div>
-    </div>
-  </section>
-
-  <!-- FULL SITE STRUCTURE -->
-  <section id="structure" class="section">
-    <h2>Full Website Structure</h2>
-    <p>This hub is designed to expand into a multi‑page coaching ecosystem.</p>
+  <!-- DOWNLOAD CENTER -->
+  <section id="downloads" class="section">
+    <h2>Download Center</h2>
 
     <div class="card-grid">
+
       <div class="card">
-        <h3>Home</h3>
-        <p>Overview of coaching services and brand identity.</p>
+        <h3>BRD Template</h3>
+        <a class="download-link" href="#">Download Word</a>
+        <a class="download-link" href="#">Download PDF</a>
       </div>
+
       <div class="card">
-        <h3>About</h3>
-        <p>Mission, values, and coaching philosophy.</p>
+        <h3>FRD Template</h3>
+        <a class="download-link" href="#">Download Word</a>
+        <a class="download-link" href="#">Download PDF</a>
       </div>
+
       <div class="card">
-        <h3>Programs</h3>
-        <p>Detailed breakdown of coaching offerings.</p>
+        <h3>RACI Matrix</h3>
+        <a class="download-link" href="#">Download Word</a>
+        <a class="download-link" href="#">Download PDF</a>
       </div>
+
       <div class="card">
-        <h3>Client Portal</h3>
-        <p>Secure login and personalized content.</p>
+        <h3>RTM Template</h3>
+        <a class="download-link" href="#">Download Word</a>
+        <a class="download-link" href="#">Download PDF</a>
       </div>
+
       <div class="card">
-        <h3>Resources</h3>
-        <p>Templates, guides, and BA learning materials.</p>
+        <h3>UAT Template</h3>
+        <a class="download-link" href="#">Download Word</a>
+        <a class="download-link" href="#">Download PDF</a>
       </div>
+
       <div class="card">
-        <h3>Contact</h3>
-        <p>Booking, inquiries, and support.</p>
+        <h3>Workflow Guide</h3>
+        <a class="download-link" href="#">Download Word</a>
+        <a class="download-link" href="#">Download PDF</a>
       </div>
+
+      <div class="card">
+        <h3>Advanced BA Templates</h3>
+        <a class="download-link" href="#">API Requirements</a>
+        <a class="download-link" href="#">Stakeholder Register</a>
+        <a class="download-link" href="#">Use Case Specs</a>
+        <a class="download-link" href="#">Process Maps</a>
+      </div>
+
     </div>
   </section>
 
