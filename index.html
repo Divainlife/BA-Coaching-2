@@ -4,17 +4,78 @@
   <meta charset="UTF-8" />
   <title>Wheeler Fortune BA Coaching Hub</title>
 
-  <!-- Brand Stylesheet -->
-  <link rel="stylesheet" href="styles_Version3 (1).css" />
-
   <style>
-    /* Modern Coaching Homepage Enhancements */
+    :root {
+      --brand: #7a1f3d;
+      --muted: #f7f7f7;
+      --card-border: #e0e0e0;
+      --text-dark: #333;
+      --text-light: #555;
+      --radius: 14px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+      color: var(--text-dark);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* HEADER */
+    .site-header {
+      background: var(--brand);
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .site-header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    .tagline {
+      margin-top: 6px;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /* NAV */
+    .primary-nav {
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: bold;
+      padding: 10px;
+    }
+
+    /* HERO */
     .hero {
       background: var(--brand);
       color: #fff;
       padding: 60px 20px;
       text-align: center;
-      border-radius: 0 0 20px 20px;
+      border-radius: 0 0 var(--radius) var(--radius);
     }
 
     .hero h1 {
@@ -28,6 +89,7 @@
       opacity: 0.95;
     }
 
+    /* SECTIONS */
     .section {
       margin-top: 40px;
     }
@@ -38,6 +100,7 @@
       padding-bottom: 6px;
     }
 
+    /* CARDS */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -49,7 +112,7 @@
       background: #fff;
       border: 1px solid var(--card-border);
       padding: 20px;
-      border-radius: 12px;
+      border-radius: var(--radius);
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
       transition: transform .2s ease, box-shadow .2s ease;
     }
@@ -65,6 +128,7 @@
       font-size: 1.2rem;
     }
 
+    /* FOOTER */
     .footer-brand {
       margin-top: 60px;
       padding: 20px;
@@ -72,149 +136,241 @@
       text-align: center;
       border-top: 1px solid #ddd;
     }
+
+    /* CLIENT PORTAL */
+    .login-box {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: var(--radius);
+      border: 1px solid #ccc;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 16px;
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+    }
+
+    .login-box button:hover {
+      opacity: 0.9;
+    }
   </style>
 </head>
 
 <body>
 
-<a href="#main" class="skip-link">Skip to content</a>
-
 <header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">
-      <h1>Wheeler Fortune BA Coaching Hub</h1>
-      <p class="tagline">Business Analyst Coaching for Underserved Communities</p>
-    </div>
-
-    <button class="nav-toggle" aria-expanded="false">
-      <span class="hamburger"></span>
-    </button>
-  </div>
+  <h1>Wheeler Fortune BA Coaching Hub</h1>
+  <p class="tagline">Clarity • Alignment • Professional Growth</p>
 </header>
 
 <nav class="primary-nav">
-  <div class="container nav-inner">
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#curriculum">BA Curriculum</a></li>
-      <li><a href="#program">8‑Week Program</a></li>
-      <li><a href="#templates">Templates</a></li>
-      <li><a href="#workbook">Workbook</a></li>
-      <li><a href="#workshops">Workshops</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#framework">ALIGN Framework</a></li>
+    <li><a href="#diagrams">Visual Diagrams</a></li>
+    <li><a href="#portal">Client Portal</a></li>
+    <li><a href="#resources">Resources</a></li>
+    <li><a href="#structure">Site Structure</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
-<main id="main" class="container">
+<section class="hero">
+  <h1>Business Analysis Coaching for High‑Achieving Professionals</h1>
+  <p>Empowering you to elevate your BA skills, strengthen your confidence, and accelerate your career trajectory.</p>
+</section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Empowering Aspiring Business Analysts</h1>
-    <p>Structured coaching, real-world tools, and culturally competent guidance designed for minority entrepreneurs, first-time professionals, and underserved communities.</p>
-  </section>
+<div class="container">
 
-  <!-- ABOUT -->
+  <!-- ABOUT PAGE -->
   <section id="about" class="section">
     <h2>About Wheeler Fortune Coaching</h2>
     <p>
-      Wheeler Fortune Business Support Consultants is a minority-owned coaching and support hub based in New Jersey. 
-      Our BA Coaching division helps individuals transition into Business Analyst roles through structured learning, hands-on tools, and personalized mentorship.
+      Wheeler Fortune Coaching is built on the belief that clarity and alignment are the foundation of professional growth.
+      With over a decade of experience supporting corporate leaders, analysts, and project teams, Wheeler Fortune brings
+      a structured, empowering approach to Business Analysis coaching.
     </p>
-    <p>
-      We serve minority and women-owned startups, first-time business owners, immigrants entering professional roles, and individuals seeking career advancement.
-    </p>
-  </section>
-
-  <!-- CARD GRID -->
-  <section class="section">
-    <h2>Explore Your Coaching Path</h2>
 
     <div class="card-grid">
-
       <div class="card">
-        <h3>BA Curriculum</h3>
-        <p>Learn the foundations of Business Analysis with structured modules and real-world examples.</p>
-        <a href="#curriculum">View Curriculum →</a>
+        <h3>Our Mission</h3>
+        <p>To help professionals gain clarity, build confidence, and navigate their careers with purpose.</p>
       </div>
 
       <div class="card">
-        <h3>8‑Week Coaching Program</h3>
-        <p>A guided, week-by-week coaching experience covering BA fundamentals, Agile, APIs, and career readiness.</p>
-        <a href="#program">Explore Program →</a>
+        <h3>Our Philosophy</h3>
+        <p>We believe in structured learning, intentional growth, and practical tools that create real transformation.</p>
       </div>
 
       <div class="card">
-        <h3>Templates & Tools</h3>
-        <p>Requirements docs, user stories, process maps, stakeholder matrices, test cases, and more.</p>
-        <a href="#templates">Download Templates →</a>
+        <h3>Our Approach</h3>
+        <p>The ALIGN Framework guides every coaching engagement, ensuring consistency, clarity, and measurable progress.</p>
       </div>
-
-      <div class="card">
-        <h3>Workbook</h3>
-        <p>Exercises, worksheets, and reflection prompts to help you build confidence and clarity.</p>
-        <a href="#workbook">Open Workbook →</a>
-      </div>
-
-      <div class="card">
-        <h3>Community Workshops</h3>
-        <p>Free and low-cost workshops designed to build skills and empower local communities.</p>
-        <a href="#workshops">See Workshops →</a>
-      </div>
-
-      <div class="card">
-        <h3>Contact & Booking</h3>
-        <p>Schedule coaching sessions, ask questions, or request support services.</p>
-        <a href="#contact">Get in Touch →</a>
-      </div>
-
     </div>
   </section>
 
-  <!-- 8 WEEK PROGRAM -->
-  <section id="program" class="section">
-    <h2>8‑Week Coaching Program</h2>
-    <ul class="card-list">
-      <li><a href="#w1">Week 1 – BA Foundations</a></li>
-      <li><a href="#w2">Week 2 – Requirements</a></li>
-      <li><a href="#w3">Week 3 – Agile</a></li>
-      <li><a href="#w4">Week 4 – Process Mapping</a></li>
-      <li><a href="#w5">Week 5 – Stakeholders</a></li>
-      <li><a href="#w6">Week 6 – Testing</a></li>
-      <li><a href="#w7">Week 7 – APIs</a></li>
-      <li><a href="#w8">Week 8 – Career Strategy</a></li>
-    </ul>
+  <!-- PROGRAMS PAGE -->
+  <section id="programs" class="section">
+    <h2>Coaching Programs</h2>
+    <p>Explore structured coaching programs designed to elevate your Business Analysis career.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Clarity & Alignment Coaching™</h3>
+        <p>Perfect for professionals seeking direction, confidence, and a clear roadmap for their next career milestone.</p>
+      </div>
+
+      <div class="card">
+        <h3>BA Skills Accelerator</h3>
+        <p>Hands‑on skill development covering requirements, workflows, documentation, and stakeholder engagement.</p>
+      </div>
+
+      <div class="card">
+        <h3>Career Strategy Intensive</h3>
+        <p>Focused coaching for résumé refinement, interview mastery, and professional branding.</p>
+      </div>
+
+      <div class="card">
+        <h3>Executive BA Coaching</h3>
+        <p>Advanced coaching for senior analysts and leaders navigating complex initiatives and organizational influence.</p>
+      </div>
+    </div>
   </section>
 
-</main>
+  <!-- ALIGN FRAMEWORK -->
+  <section id="framework" class="section">
+    <h2>The ALIGN Framework</h2>
+    <p>The Wheeler Fortune signature coaching model guiding clients through Awareness, Learning, Implementation, Growth, and Navigation.</p>
+
+    <div class="card-grid">
+      <div class="card"><h3>A — Awareness</h3><p>Gain clarity on your current state.</p></div>
+      <div class="card"><h3>L — Learning</h3><p>Build BA knowledge and tools.</p></div>
+      <div class="card"><h3>I — Implementation</h3><p>Apply new skills through guided exercises.</p></div>
+      <div class="card"><h3>G — Growth</h3><p>Strengthen your confidence and impact.</p></div>
+      <div class="card"><h3>N — Navigation</h3><p>Plan your next steps strategically.</p></div>
+    </div>
+  </section>
+
+  <!-- VISUAL DIAGRAMS -->
+  <section id="diagrams" class="section">
+    <h2>Visual Coaching Diagrams</h2>
+    <p>Brand‑aligned visuals that illustrate the ALIGN coaching model.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>ALIGN Model Diagram</h3>
+        <p>A circular or linear diagram showing the five phases of ALIGN.</p>
+      </div>
+      <div class="card">
+        <h3>Client Journey Map</h3>
+        <p>Visualizing the transformation from onboarding to mastery.</p>
+      </div>
+      <div class="card">
+        <h3>BA Skills Roadmap</h3>
+        <p>Milestones for junior, mid‑level, and senior BA progression.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT PORTAL -->
+  <section id="portal" class="section">
+    <h2>Client Portal</h2>
+    <p>Secure access to your coaching materials, session notes, and downloadable templates.</p>
+
+    <div class="login-box">
+      <h3>Client Login</h3>
+      <input type="text" placeholder="Email Address" />
+      <input type="password" placeholder="Password" />
+      <button>Login</button>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Session Notes</h3>
+        <p>Access your personalized coaching notes and action plans.</p>
+      </div>
+      <div class="card">
+        <h3>Downloadable Templates</h3>
+        <p>BRD, FRD, RACI, RTM, UAT, and workflow guides.</p>
+      </div>
+      <div class="card">
+        <h3>Progress Tracking</h3>
+        <p>Monitor your growth through the ALIGN model.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section id="resources" class="section">
+    <h2>Coaching Resources</h2>
+    <div class="card-grid">
+      <div class="card"><h3>BA Templates</h3><p>Requirements docs, intake forms, workflow guides.</p></div>
+      <div class="card"><h3>Career Tools</h3><p>Résumé frameworks, portfolio samples.</p></div>
+      <div class="card"><h3>Learning Library</h3><p>Curated BA articles and exercises.</p></div>
+    </div>
+  </section>
+
+  <!-- FULL SITE STRUCTURE -->
+  <section id="structure" class="section">
+    <h2>Full Website Structure</h2>
+    <p>This hub is designed to expand into a multi‑page coaching ecosystem.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Home</h3>
+        <p>Overview of coaching services and brand identity.</p>
+      </div>
+      <div class="card">
+        <h3>About</h3>
+        <p>Mission, values, and coaching philosophy.</p>
+      </div>
+      <div class="card">
+        <h3>Programs</h3>
+        <p>Detailed breakdown of coaching offerings.</p>
+      </div>
+      <div class="card">
+        <h3>Client Portal</h3>
+        <p>Secure login and personalized content.</p>
+      </div>
+      <div class="card">
+        <h3>Resources</h3>
+        <p>Templates, guides, and BA learning materials.</p>
+      </div>
+      <div class="card">
+        <h3>Contact</h3>
+        <p>Booking, inquiries, and support.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: <strong>Wheeler_Fortune@outlook.com</strong></p>
+  </section>
+
+</div>
 
 <footer class="footer-brand">
-  Wheeler Fortune BA Coaching Hub • Empowering Communities Through Professional Growth
+  <p>© 2026 Wheeler Fortune Business Support Consulting LLC</p>
 </footer>
-
-<script>
-  // Mobile nav toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const primaryNav = document.querySelector('.primary-nav');
-
-  navToggle.addEventListener('click', () => {
-    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', !expanded);
-    navToggle.classList.toggle('open');
-    primaryNav.classList.toggle('expanded');
-  });
-
-  // Sticky shadow on scroll
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      primaryNav.classList.add('scrolled');
-    } else {
-      primaryNav.classList.remove('scrolled');
-    }
-  });
-</script>
 
 </body>
 </html>
-
-
